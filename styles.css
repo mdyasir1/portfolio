@@ -1,0 +1,30 @@
+.my-component {
+  background-color: #3b82f6; /* Tailwind's bg-blue-500 */
+  color: #ffffff; /* Tailwind's text-white */
+  padding: 1rem; /* Tailwind's p-4 */
+  border-radius: 0.5rem; /* Tailwind's rounded-lg */
+}
+
+/* Component 1 */
+.component-one {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+/* Component 2 */
+.component-two {
+  background-color: #e0e0e0;
+  color: #444;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+/* Component 3 */
+.component-three {
+  background-color: #d0d0d0;
+  color: #555;
+  padding: 2rem;
+  border-radius: 0.75rem;
+}
