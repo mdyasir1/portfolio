@@ -1,0 +1,41 @@
+.contactContainer {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.formTextarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contactContainer {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactContainer {
+    padding: 0 12px;
+  }
+  
+  .formInput,
+  .formTextarea {
+    padding: 0.5rem;
+  }
+}
