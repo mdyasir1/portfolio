@@ -6,11 +6,10 @@ This is the personal portfolio website of M Yasir Arafath, a Frontend Developer 
 
 ## Features
 
-- ✨ **Modern UI/UX** – Designed with a clean and minimalistic aesthetic using modern styling libraries.
-- 💻 **Responsive Design** – Optimized for all devices, from mobile phones to desktop monitors.
-- 🎯 **Project Showcase** – Includes detailed cards for each project with links to live demos and source code.
-- 🧠 **Tech Stack Mastery** – Demonstrates proficiency in a wide range of technologies (see below).
-- 📬 **Contact Section** – Lets users get in touch easily via a built-in contact form or social links.
+-  **Modern UI/UX** – Designed with a clean and minimalistic aesthetic using modern styling libraries.
+-  **Responsive Design** – Optimized for all devices, from mobile phones to desktop monitors with `useMediaQuery`.
+-  **Project Showcase** – Includes detailed cards for each project with links.
+-  **Contact Section** – Lets users get in touch easily via a built-in contact form or social links.
 
 
 ## Technologies Used
