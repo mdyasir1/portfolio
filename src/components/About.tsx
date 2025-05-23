@@ -1,8 +1,7 @@
 import React from "react";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <div style={{ backgroundColor: "#0f172a" }} className="w-full min-h-screen">
       <div className="max-w-6xl mx-auto px-4 py-16">

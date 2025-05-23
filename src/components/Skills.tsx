@@ -1,5 +1,4 @@
 import React from "react";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import {
   FaHtml5,
@@ -10,9 +9,10 @@ import {
   FaNodeJs,
 } from "react-icons/fa";
 import { SiTailwindcss, SiMysql } from "react-icons/si";
+import { Skill } from "../types/types";
 
-const Skills = () => {
-  const skills = [
+const Skills: React.FC = () => {
+  const skills: Skill[] = [
     { name: "HTML", icon: <FaHtml5 className="text-[#E34F26]" /> },
     { name: "CSS", icon: <FaCss3Alt className="text-[#1572B6]" /> },
     { name: "JavaScript", icon: <FaJs className="text-[#F7DF1E]" /> },

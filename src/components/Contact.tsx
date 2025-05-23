@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { ContactFormData } from "../types/types";
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
+const Contact: React.FC = () => {
+  const [formData, setFormData] = useState<ContactFormData>({
     subject: "",
     message: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const mailtoLink = `mailto:mdyasir4145@gmail.com?subject=${encodeURIComponent(
       formData.subject
@@ -17,25 +18,19 @@ const Contact = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "#0f172a" }} className="w-full min-h-screen">
+    <div className="w-full min-h-screen bg-[#0f172a]">
       <div className="max-w-6xl mx-auto px-4 py-16">
-        <div
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          as={motion.div}
         >
-          <h2
-            style={{ color: "#38bdf8", borderBottom: " 4px solid #38bdf8" }}
-            className="text-4xl font-bold inline"
-          >
+          <h2 className="text-4xl font-bold inline text-[#38bdf8] border-b-4 border-[#38bdf8]">
             Contact
           </h2>
-          <p style={{ color: "#94a3b8" }} className="py-6">
-            Get in touch with me
-          </p>
-        </div>
+          <p className="py-6 text-[#94a3b8]">Get in touch with me</p>
+        </motion.div>
 
         <div className="flex flex-col md:flex-row gap-8 items-start">
           {/* Contact Form */}
@@ -51,37 +46,22 @@ const Contact = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, subject: e.target.value })
                 }
-                style={{
-                  backgroundColor: "#1e293b",
-                  color: "#ffffff",
-                  border: "2px solid #38bdf8",
-                }}
-                className="p-4 rounded-md focus:outline-none w-full text-base md:text-lg"
+                className="w-full p-4 rounded-md focus:outline-none text-base md:text-lg bg-[#1e293b] text-white border-2 border-[#38bdf8]"
                 required
               />
               <textarea
-                rows="10"
+                rows={10}
                 placeholder="Your message"
                 value={formData.message}
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
-                style={{
-                  backgroundColor: "#1e293b",
-                  color: "#ffffff",
-                  border: "2px solid #38bdf8",
-                }}
-                className="p-4 rounded-md focus:outline-none w-full text-base md:text-lg resize-none"
+                className="w-full p-4 rounded-md focus:outline-none text-base md:text-lg resize-none bg-[#1e293b] text-white border-2 border-[#38bdf8]"
                 required
-              ></textarea>
-
+              />
               <motion.button
                 type="submit"
-                style={{
-                  backgroundColor: "#38bdf8",
-                  color: "#0f172a",
-                }}
-                className="px-6 py-3 rounded-md hover:opacity-80 duration-300 font-semibold w-full md:w-auto"
+                className="px-6 py-3 rounded-md hover:opacity-80 duration-300 font-semibold w-full md:w-auto bg-[#38bdf8] text-[#0f172a]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -92,10 +72,7 @@ const Contact = () => {
 
           {/* Social Links */}
           <div className="md:w-1/3">
-            <h3
-              style={{ color: "#ffffff" }}
-              className="text-2xl font-bold mb-6"
-            >
+            <h3 className="text-2xl font-bold mb-6 text-white">
               Connect With Me
             </h3>
             <div className="flex flex-col gap-4">
@@ -103,9 +80,8 @@ const Contact = () => {
                 href="https://github.com/mdyasir1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-lg"
-                style={{ color: "#ffffff" }}
-                whileHover={{ x: 10, color: "#38bdf8" }}
+                className="flex items-center gap-3 text-lg text-white hover:text-[#38bdf8]"
+                whileHover={{ x: 10 }}
                 transition={{ duration: 0.2 }}
               >
                 <FaGithub className="text-2xl" />
@@ -115,9 +91,8 @@ const Contact = () => {
                 href="https://linkedin.com/in/mdyasirarafath"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-lg"
-                style={{ color: "#ffffff" }}
-                whileHover={{ x: 10, color: "#38bdf8" }}
+                className="flex items-center gap-3 text-lg text-white hover:text-[#38bdf8]"
+                whileHover={{ x: 10 }}
                 transition={{ duration: 0.2 }}
               >
                 <FaLinkedin className="text-2xl" />
@@ -125,9 +100,8 @@ const Contact = () => {
               </motion.a>
               <motion.a
                 href="mailto:mdyasir4145@gmail.com"
-                className="flex items-center gap-3 text-lg"
-                style={{ color: "#ffffff" }}
-                whileHover={{ x: 10, color: "#38bdf8" }}
+                className="flex items-center gap-3 text-lg text-white hover:text-[#38bdf8]"
+                whileHover={{ x: 10 }}
                 transition={{ duration: 0.2 }}
               >
                 <span className="text-2xl">✉️</span>

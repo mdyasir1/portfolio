@@ -1,9 +1,8 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <div style={{ backgroundColor: '#0f172a' }} className="w-full h-screen">
       <div className="max-w-6xl mx-auto px-4 flex flex-col justify-center h-full">
