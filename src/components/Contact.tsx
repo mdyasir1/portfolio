@@ -2,6 +2,7 @@ import React, { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { ContactFormData } from "../types/types";
+import { useMediaQuery } from '@mui/material';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -15,6 +16,32 @@ const Contact: React.FC = () => {
       formData.subject
     )}&body=${encodeURIComponent(formData.message)}`;
     window.location.href = mailtoLink;
+  };
+
+  const isMobile = useMediaQuery('(max-width:480px)');
+  const isTablet = useMediaQuery('(max-width:768px)');
+  const isDesktop = useMediaQuery('(min-width:1024px)');
+
+  const formStyles = {
+    container: {
+      width: '100%',
+      maxWidth: isDesktop ? '700px' : '600px',
+      margin: '0 auto',
+      padding: isMobile ? '0 12px' : isTablet ? '0 16px' : '0 20px',
+    },
+    input: {
+      width: '100%',
+      padding: isMobile ? '0.5rem' : '0.75rem',
+      fontSize: isMobile ? '0.875rem' : '1rem',
+      borderRadius: '0.375rem',
+    },
+    textarea: {
+      width: '100%',
+      minHeight: isMobile ? '120px' : '150px',
+      padding: isMobile ? '0.5rem' : '0.75rem',
+      fontSize: isMobile ? '0.875rem' : '1rem',
+      borderRadius: '0.375rem',
+    }
   };
 
   return (
@@ -34,7 +61,7 @@ const Contact: React.FC = () => {
 
         <div className="flex flex-col md:flex-row gap-8 items-start">
           {/* Contact Form */}
-          <div className="flex-1 w-full max-w-2xl mx-auto md:mx-0">
+          <div className="flex-1 w-full max-w-2xl mx-auto md:mx-0" style={formStyles.container}>
             <form
               onSubmit={handleSubmit}
               className="flex flex-col gap-4 w-full"
@@ -43,20 +70,18 @@ const Contact: React.FC = () => {
                 type="text"
                 placeholder="Subject"
                 value={formData.subject}
-                onChange={(e) =>
-                  setFormData({ ...formData, subject: e.target.value })
-                }
-                className="w-full p-4 rounded-md focus:outline-none text-base md:text-lg bg-[#1e293b] text-white border-2 border-[#38bdf8]"
+                onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                className="rounded-md focus:outline-none text-base md:text-lg bg-[#1e293b] text-white border-2 border-[#38bdf8]"
+                style={formStyles.input}
                 required
               />
               <textarea
                 rows={10}
                 placeholder="Your message"
                 value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
-                className="w-full p-4 rounded-md focus:outline-none text-base md:text-lg resize-none bg-[#1e293b] text-white border-2 border-[#38bdf8]"
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                className="rounded-md focus:outline-none text-base md:text-lg resize-none bg-[#1e293b] text-white border-2 border-[#38bdf8]"
+                style={formStyles.textarea}
                 required
               />
               <motion.button
