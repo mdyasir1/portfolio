@@ -17,4 +17,5 @@ This is the personal portfolio website of M Yasir Arafath, a Frontend Developer 
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [Material UI](https://mui.com/)
 - [Framer Motion](https://www.framer.com/motion/)
