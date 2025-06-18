@@ -32,8 +32,15 @@ const Projects: React.FC = () => {
             Projects
           </h2>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="flex items-center justify-center h-[70vh]">
+          <h3
+            style={{ color: "rgb(205, 205, 205)" }}
+            className="text-4xl font-bold text-center"
+          >
+            Currently Updating The Projects Section with my Latest Work.
+          </h3>
+        </div>
+        {/* <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -84,7 +91,7 @@ const Projects: React.FC = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
