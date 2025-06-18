@@ -1,17 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Resume from "./Resume";
 
 const About: React.FC = () => {
   return (
     <div style={{ backgroundColor: "#0f172a" }} className="w-full min-h-screen">
       <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="pb-8">
+        <div className="pb-8 flex justify-between items-center gap-8">
           <h2
             style={{ color: "#38bdf8", borderBottom: "4px solid #38bdf8" }}
             className="text-4xl font-bold inline"
           >
             About Me
           </h2>
+          <Resume />
         </div>
 
         <div className="grid gap-8 text-white">

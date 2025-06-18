@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Project } from "../types/types";
+import Resume from "./Resume";
 
 const Projects: React.FC = () => {
   const projects: Project[] = [
@@ -24,18 +25,19 @@ const Projects: React.FC = () => {
   return (
     <div style={{ backgroundColor: "#0f172a" }} className="w-full min-h-screen">
       <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="pb-8">
+        <div className="pb-8 flex justify-between items-center gap-8">
           <h2
             style={{ color: "#38bdf8", borderBottom: "4px solid #38bdf8" }}
             className="text-4xl font-bold inline"
           >
             Projects
           </h2>
+          <Resume />
         </div>
         <div className="flex items-center justify-center h-[70vh]">
           <h3
             style={{ color: "rgb(205, 205, 205)" }}
-            className="text-4xl font-bold text-center"
+            className="text-4xl font-normal text-center"
           >
             Currently Updating The Projects Section with my Latest Work.
           </h3>

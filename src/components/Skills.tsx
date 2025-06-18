@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { SiTailwindcss, SiMysql } from "react-icons/si";
 import { Skill } from "../types/types";
+import Resume from "./Resume";
 
 const Skills: React.FC = () => {
   const skills: Skill[] = [
@@ -29,13 +30,14 @@ const Skills: React.FC = () => {
   return (
     <div style={{ backgroundColor: "#0f172a" }} className="w-full min-h-screen">
       <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="pb-8">
+        <div className="pb-8 flex justify-between items-center gap-8">
           <h2
             style={{ color: "#38bdf8", borderBottom: "4px solid #38bdf8" }}
             className="text-4xl font-bold inline"
           >
             Skills
           </h2>
+          <Resume />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
