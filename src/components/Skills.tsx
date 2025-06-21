@@ -28,17 +28,17 @@ const Skills: React.FC = () => {
 
   return (
     <div style={{ backgroundColor: "#0f172a" }} className="w-full min-h-screen">
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="pb-8 flex justify-between items-center gap-8">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+        <div className="pb-4 sm:pb-6 md:pb-8 flex justify-between items-center gap-4 sm:gap-6 md:gap-8">
           <h2
             style={{ color: "#38bdf8", borderBottom: "4px solid #38bdf8" }}
-            className="text-4xl font-bold inline"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold inline"
           >
             Skills
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
@@ -59,14 +59,14 @@ const Skills: React.FC = () => {
                 backgroundColor: "#1e293b",
                 border: "2px solid #38bdf8",
                 borderRadius: "50%",
-                width: "150px",
-                height: "150px",
+                width: "100px",
+                height: "100px",
                 margin: "0 auto",
               }}
-              className="flex flex-col items-center justify-center gap-3 cursor-pointer shadow-lg hover:shadow-xl"
+              className="sm:w-[120px] sm:h-[120px] md:w-[130px] md:h-[130px] lg:w-[150px] lg:h-[150px] flex flex-col items-center justify-center gap-2 sm:gap-3 cursor-pointer shadow-lg hover:shadow-xl"
             >
               <motion.div
-                className="text-5xl"
+                className="text-3xl sm:text-4xl md:text-5xl"
                 animate={{
                   rotate: [0, 360],
                 }}
@@ -80,7 +80,7 @@ const Skills: React.FC = () => {
               </motion.div>
               <h3
                 style={{ color: "#ffffff" }}
-                className="text-sm font-bold text-center"
+                className="text-xs sm:text-sm md:text-xs font-semibold text-center"
               >
                 {skill.name}
               </h3>

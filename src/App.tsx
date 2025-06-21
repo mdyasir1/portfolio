@@ -8,20 +8,6 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 
 function App() {
-  const responsiveStyles = {
-    paddingTop: "4rem",
-    maxWidth: "1200px",
-    margin: "0 auto",
-    padding: "4rem 20px 0",
-    "@media (max-width: 768px)": {
-      padding: "3rem 16px 0",
-      maxWidth: "100%",
-    },
-    "@media (max-width: 480px)": {
-      padding: "2rem 12px 0",
-    },
-  };
-
   return (
     <BrowserRouter>
       <div style={{ backgroundColor: "#0f172a", minHeight: "100vh" }}>
@@ -31,7 +17,7 @@ function App() {
           <Route
             path="/about"
             element={
-              <main style={responsiveStyles}>
+              <main className="pt-12 sm:pt-14 md:pt-16 max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                 <About />
               </main>
             }
@@ -39,7 +25,7 @@ function App() {
           <Route
             path="/projects"
             element={
-              <main style={responsiveStyles}>
+              <main className="pt-12 sm:pt-14 md:pt-16 max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                 <Projects />
               </main>
             }
@@ -47,7 +33,7 @@ function App() {
           <Route
             path="/skills"
             element={
-              <main style={responsiveStyles}>
+              <main className="pt-12 sm:pt-14 md:pt-16 max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                 <Skills />
               </main>
             }
@@ -55,7 +41,7 @@ function App() {
           <Route
             path="/contact"
             element={
-              <main style={responsiveStyles}>
+              <main className="pt-12 sm:pt-14 md:pt-16 max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
                 <Contact />
               </main>
             }

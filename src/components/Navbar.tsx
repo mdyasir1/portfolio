@@ -1,6 +1,5 @@
 import React, { ReactNode, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import {
   FaHome,
@@ -26,8 +25,8 @@ const Navbar: React.FC = () => {
     { title: "About", path: "/about", icon: <FaUser /> },
     { title: "Projects", path: "/projects", icon: <FaCode /> },
     { title: "Skills", path: "/skills", icon: <FaTools /> },
+    { title: "Resume", path: "/resume.pdf", icon: <FaFileAlt /> }, // Open PDF directly
     { title: "Contact", path: "/contact", icon: <FaEnvelope /> },
-    // Resume handled separately below
   ];
 
   return (
@@ -53,23 +52,18 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Navbar */}
           <div className="hidden md:flex space-x-8">
-            {navItems.map((item, index) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onMouseEnter={() => setIsHovered(index)}
-                onMouseLeave={() => setIsHovered(null)}
-                className="relative group"
-              >
-                <motion.div
-                  className="flex items-center gap-2 py-2"
-                  style={{
-                    color:
-                      location.pathname === item.path ? "#38bdf8" : "#ffffff",
-                  }}
-                  whileHover={{ y: -2 }}
+            {navItems.map((item, index) =>
+              item.path === "/resume.pdf" ? (
+                <a
+                  key={item.title}
+                  href={item.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onMouseEnter={() => setIsHovered(index)}
+                  onMouseLeave={() => setIsHovered(null)}
+                  className="relative group flex items-center gap-2 py-2 text-white hover:text-[#38bdf8]"
                 >
-                  <span className="text-xl">{item.icon}</span>
+                  {item.icon}
                   <span>{item.title}</span>
                   {isHovered === index && (
                     <motion.div
@@ -78,54 +72,69 @@ const Navbar: React.FC = () => {
                       layoutId="underline"
                     />
                   )}
-                </motion.div>
-              </Link>
-            ))}
-
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              onMouseEnter={() => setIsHovered(navItems.length)}
-              onMouseLeave={() => setIsHovered(null)}
-              className="relative group flex items-center gap-2 py-2 text-white hover:text-[#38bdf8]"
-            >
-              <FaFileAlt className="text-xl" />
-              <span>Resume</span>
-              {isHovered === navItems.length && (
-                <motion.div
-                  className="absolute bottom-0 left-0 w-full h-0.5"
-                  style={{ backgroundColor: "#38bdf8" }}
-                  layoutId="underline"
-                />
-              )}
-            </a>
+                </a>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onMouseEnter={() => setIsHovered(index)}
+                  onMouseLeave={() => setIsHovered(null)}
+                  className="relative group"
+                >
+                  <motion.div
+                    className="flex items-center gap-2 py-2"
+                    style={{
+                      color:
+                        location.pathname === item.path
+                          ? "#38bdf8"
+                          : "#ffffff",
+                    }}
+                    whileHover={{ y: -2 }}
+                  >
+                    <span className="text-xl">{item.icon}</span>
+                    <span>{item.title}</span>
+                    {isHovered === index && (
+                      <motion.div
+                        className="absolute bottom-0 left-0 w-full h-0.5"
+                        style={{ backgroundColor: "#38bdf8" }}
+                        layoutId="underline"
+                      />
+                    )}
+                  </motion.div>
+                </Link>
+              )
+            )}
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile Navbar */}
           <div className="md:hidden flex items-center">
-            {navItems.map((item) => (
-              <Link key={item.path} to={item.path} className="px-3">
-                <motion.div
-                  whileHover={{ scale: 1.2 }}
-                  style={{
-                    color:
-                      location.pathname === item.path ? "#38bdf8" : "#ffffff",
-                  }}
+            {navItems.map((item) =>
+              item.path === "/resume.pdf" ? (
+                <a
+                  key={item.title}
+                  href={item.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 text-white hover:text-[#38bdf8]"
                 >
                   {item.icon}
-                </motion.div>
-              </Link>
-            ))}
-            {/* Resume link for mobile */}
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 text-white hover:text-[#38bdf8]"
-            >
-              <FaFileAlt />
-            </a>
+                </a>
+              ) : (
+                <Link key={item.path} to={item.path} className="px-3">
+                  <motion.div
+                    whileHover={{ scale: 1.2 }}
+                    style={{
+                      color:
+                        location.pathname === item.path
+                          ? "#38bdf8"
+                          : "#ffffff",
+                    }}
+                  >
+                    {item.icon}
+                  </motion.div>
+                </Link>
+              )
+            )}
           </div>
         </div>
       </div>
