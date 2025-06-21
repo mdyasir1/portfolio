@@ -22,10 +22,9 @@ const Projects: React.FC = () => {
         "The Hotel Booking module is a part of a unified travel platform that enables users to search and book trains, flights, buses, and hotels. This module focuses on providing a seamless hotel search and discovery experience, with intuitive UI and dynamic filtering.\n" +"\n"+
         "● Developed and implemented the Hotel Search Results Page (SRP) using React, TypeScript, and Tailwind CSS.\n" +
         "● Integrated RESTful APIs for hotel data (pricing, ratings, etc).\n" +
-        "● Dynamic sorting/filtering by price, rating, and distance.\n" +
         "● Used React Query for API state management.\n" +
         "● Followed SRP for clean, reusable React components.\n" +
-        "● Responsive design via Tailwind CSS (mobile-first).",
+        "● Responsive design via useMediaQuery hook.",
       image: "/project-1.jpeg",
     },
     {
