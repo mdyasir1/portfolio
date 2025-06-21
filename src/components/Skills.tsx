@@ -10,7 +10,6 @@ import {
 } from "react-icons/fa";
 import { SiTailwindcss, SiMysql } from "react-icons/si";
 import { Skill } from "../types/types";
-import Resume from "./Resume";
 
 const Skills: React.FC = () => {
   const skills: Skill[] = [
@@ -37,7 +36,6 @@ const Skills: React.FC = () => {
           >
             Skills
           </h2>
-          <Resume />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">

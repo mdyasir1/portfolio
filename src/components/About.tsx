@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Resume from "./Resume";
 
 const About: React.FC = () => {
   return (
@@ -13,7 +12,6 @@ const About: React.FC = () => {
           >
             About Me
           </h2>
-          <Resume />
         </div>
 
         <div className="grid gap-8 text-white">

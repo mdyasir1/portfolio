@@ -31,14 +31,14 @@ const Hero: React.FC = () => {
             className="text-3xl sm:text-6xl font-bold"
             whileHover={{ scale: 1.02 }}
           >
-            Frontend Developer
+            Frontend Engineer
           </motion.h2>
           <motion.p 
             style={{ color: '#94a3b8' }}
             className="text-lg max-w-[700px] leading-relaxed"
           >
-            I'm a frontend developer specializing in building exceptional digital experiences.
-            With 1 year of experience in React development, I focus on creating responsive
+            I'm a frontend engineer specializing in building exceptional digital experiences.
+            With 1.2 years of experience in React development, I focus on creating responsive
             and user-friendly web applications that leave a lasting impression.
           </motion.p>
           <div className="flex gap-4">

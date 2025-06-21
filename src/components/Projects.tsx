@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Project } from "../types/types";
-import Resume from "./Resume";
+
 
 const Projects: React.FC = () => {
   const projects: Project[] = [
@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
           >
             Projects
           </h2>
-          <Resume />
+          
         </div>
         <div className="flex items-center justify-center h-[70vh]">
           <h3
