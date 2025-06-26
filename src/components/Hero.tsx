@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
             Hi, my name is
           </motion.p>
           <motion.h1
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white"
+            className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white"
             whileHover={{ scale: 1.02 }}
           >
             Yasir
