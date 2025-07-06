@@ -19,7 +19,8 @@ const Projects: React.FC = () => {
     {
       title: "Multi-Modal Travel Booking System – Hotel Booking",
       description:
-        "The Hotel Booking module is a part of a unified travel platform that enables users to search and book trains, flights, buses, and hotels. This module focuses on providing a seamless hotel search and discovery experience, with intuitive UI and dynamic filtering.\n" +"\n"+
+        "The Hotel Booking module is a part of a unified travel platform that enables users to search and book trains, flights, buses, and hotels. This module focuses on providing a seamless hotel search and discovery experience, with intuitive UI and dynamic filtering.\n" +
+        "\n" +
         "● Developed and implemented the Hotel Search Results Page (SRP) using React, TypeScript, and Tailwind CSS.\n" +
         "● Integrated RESTful APIs for hotel data (pricing, ratings, etc).\n" +
         "● Used React Query for API state management.\n" +
@@ -30,7 +31,8 @@ const Projects: React.FC = () => {
     {
       title: "Truck Management System – Fleet Operations Platform",
       description:
-        "Truck Management System is a fleet platform built for SwiftLogistics to streamline trucking workflows. This system is designed to manage and optimize truck operations, including driver assignments, route planning, and real-time tracking. The system is built with ReactJS and follows a mobile-first design approach to ensure a seamless user experience across all devices.\n" + "\n" +
+        "Truck Management System is a fleet platform built for SwiftLogistics to streamline trucking workflows. This system is designed to manage and optimize truck operations, including driver assignments, route planning, and real-time tracking. The system is built with ReactJS and follows a mobile-first design approach to ensure a seamless user experience across all devices.\n" +
+        "\n" +
         "● Built the front-end with ReactJS.\n" +
         "● Created reusable components (HTML, CSS, JavaScript).\n" +
         "● Integrated real-time tracking features.\n" +
@@ -82,7 +84,9 @@ const Projects: React.FC = () => {
                   style={{ color: "#38bdf8", border: "1px solid #38bdf8" }}
                   className="px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base rounded font-semibold hover:opacity-80 transition-opacity cursor-pointer"
                 >
-                  {expandedIndexes.includes(index) ? "Hide Details" : "View Details"}
+                  {expandedIndexes.includes(index)
+                    ? "Hide Details"
+                    : "View Details"}
                 </button>
 
                 {expandedIndexes.includes(index) && (
