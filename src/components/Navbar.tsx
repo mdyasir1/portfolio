@@ -41,13 +41,16 @@ const Navbar: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link to="/">
-            <motion.h1
-              className="text-2xl font-bold"
-              style={{ color: "#38bdf8" }}
+            <motion.div
+              className="flex items-center"
               whileHover={{ scale: 1.1 }}
             >
-              YM
-            </motion.h1>
+              <img
+                src="/Y.svg"
+                alt="Basic Logo"
+                className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7"
+              />
+            </motion.div>
           </Link>
 
           {/* Desktop Navbar */}
@@ -85,9 +88,7 @@ const Navbar: React.FC = () => {
                     className="flex items-center gap-2 py-2"
                     style={{
                       color:
-                        location.pathname === item.path
-                          ? "#38bdf8"
-                          : "#ffffff",
+                        location.pathname === item.path ? "#38bdf8" : "#ffffff",
                     }}
                     whileHover={{ y: -2 }}
                   >
@@ -125,9 +126,7 @@ const Navbar: React.FC = () => {
                     whileHover={{ scale: 1.2 }}
                     style={{
                       color:
-                        location.pathname === item.path
-                          ? "#38bdf8"
-                          : "#ffffff",
+                        location.pathname === item.path ? "#38bdf8" : "#ffffff",
                     }}
                   >
                     {item.icon}

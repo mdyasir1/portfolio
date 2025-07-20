@@ -34,9 +34,9 @@ const Contact: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 items-start">
+        <div className="flex flex-col lg:flex-row md:flex-row gap-6 md:gap-10 sm:gap-8 items-start">
           {/* Contact Form */}
-          <div className="flex-1 w-full max-w-full lg:max-w-[600px] xl:max-w-[700px] px-0 mx-auto lg:mx-0">
+          <div className="flex-1 w-full max-w-full  lg:max-w-[600px] xl:max-w-[700px] px-0 mx-auto lg:mx-0">
             <form
               onSubmit={handleSubmit}
               className="flex flex-col gap-3 sm:gap-4 w-full"
@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Social Links */}
-          <div className="w-full lg:w-auto lg:flex-1 px-0 lg:px-4 xl:px-6">
+          <div className="w-full md:w-[300px] lg:w-auto lg:flex-1 px-0 lg:px-4 xl:px-6">
             <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white">
               Connect With Me
             </h3>
@@ -106,7 +106,7 @@ const Contact: React.FC = () => {
                 whileHover={{ x: 10 }}
                 transition={{ duration: 0.2 }}
               >
-                <span className="text-xl sm:text-2xl">✉️</span>
+                <span className="text-xl sm:text-2xl ml-[-3px]">✉️</span>
                 <span className="break-all">mdyasir4145@gmail.com</span>
               </motion.a>
             </div>
