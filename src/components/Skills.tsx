@@ -32,7 +32,7 @@ const frontendSkills: Skill[] = [
   { name: "React", icon: <FaReact className="text-[#61DAFB]" /> },
   { name: "Typescript", icon: <SiTypescript className="text-[#4479A1]" /> },
   { name: "Redux", icon: <SiRedux className="text-[#4479A1]" /> },
- 
+
   { name: "Next Js", icon: <RiNextjsLine className="text-[#4479A1]" /> },
   { name: "React Query", icon: <FaDatabase className="text-[#e535ab]" /> },
   { name: "Recharts", icon: <FaChartBar className="text-[#38bdf8]" /> },
