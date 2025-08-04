@@ -5,6 +5,7 @@ export interface Project {
   title: string;
   description: string;
   image: string;
+  live?: string;
 }
 
 // Form Data Types

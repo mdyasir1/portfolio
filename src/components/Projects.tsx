@@ -6,10 +6,7 @@ const Projects: React.FC = () => {
   const [expandedCompany, setExpandedCompany] = useState<number[]>([]);
   const [expandedPersonal, setExpandedPersonal] = useState<number[]>([]);
 
-  const handleToggle = (
-    index: number,
-    isPersonal: boolean = false
-  ) => {
+  const handleToggle = (index: number, isPersonal: boolean = false) => {
     if (isPersonal) {
       setExpandedPersonal((prev) =>
         prev.includes(index)
@@ -52,22 +49,33 @@ const Projects: React.FC = () => {
   const personalProjects: Project[] = [
     {
       title: "YasirNest",
-      description: "YasirNest",
+      description:
+        "YasirNest is a fully responsive eCommerce platform built to simulate a real-world online shopping experience using dummy product data.\n\n" +
+        "● Developed using React, TypeScript, Tailwind CSS, and Framer Motion.\n" +
+        "● Integrated DummyJSON API with TanStack Query (`useQuery`) for data fetching.\n" +
+        "● Implemented client-side routing using `react-router-dom`.\n" +
+        "● Managed state with React Context API and Hooks (`useState`, `useEffect`, `useContext`).\n" +
+        "● Designed modern, animated UI for improved user interaction.\n" +
+        "● Backend integration for features like authentication, account management, and wishlist is currently in progress.",
       image: "/yasirnest.jpg",
       live: "https://yasirnest.vercel.app",
     },
     {
       title: "TrackKit",
-      description: "TrackKit",
+      description:
+        "TrackKit is a lightweight inventory and sales management tool designed for small shop vendors to manage products and stock effectively.\n\n" +
+        "● Built with Next.js, TypeScript, and Tailwind CSS.\n" +
+        "● Features two core modules: Add to Inventory and Sell Items.\n" +
+        "● Implemented custom GET, POST, and PUT APIs to manage product stock levels.\n" +
+        "● Displays real-time stock status and tracks revenue updates.\n" +
+        "● Focused on usability and clarity for non-technical users.\n" +
+        "● Backend enhancements and data persistence features are currently being developed.",
       image: "/trackkit.jpg",
       live: "https://trackkit.vercel.app",
     },
   ];
 
-  const renderProjects = (
-    projects: Project[],
-    isPersonal = false
-  ) =>
+  const renderProjects = (projects: Project[], isPersonal = false) =>
     projects.map((project, index) => {
       const isExpanded = isPersonal
         ? expandedPersonal.includes(index)
@@ -87,7 +95,7 @@ const Projects: React.FC = () => {
         >
           {/* Tag only for Personal */}
           {isPersonal && (
-            <span className="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">
+            <span className="absolute top-2 left-2 bg-violet-500 text-white text-xs px-2 py-1 rounded">
               Personal
             </span>
           )}
