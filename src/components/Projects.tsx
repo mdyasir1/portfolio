@@ -48,17 +48,17 @@ const Projects: React.FC = () => {
 
   const personalProjects: Project[] = [
     {
-      title: "YasirNest",
+      title: "Zyora",
       description:
-        "YasirNest is a fully responsive eCommerce platform built to simulate a real-world online shopping experience using dummy product data.\n\n" +
-        "● Developed using React, TypeScript, Tailwind CSS, and Framer Motion.\n" +
-        "● Integrated DummyJSON API with TanStack Query (`useQuery`) for data fetching.\n" +
-        "● Implemented client-side routing using `react-router-dom`.\n" +
-        "● Managed state with React Context API and Hooks (`useState`, `useEffect`, `useContext`).\n" +
-        "● Designed modern, animated UI for improved user interaction.\n" +
-        "● Backend integration for features like authentication, account management, and wishlist is currently in progress.",
-      image: "/yasirnest.jpg",
-      live: "https://yasirnest.vercel.app",
+        "Zyora is a modern e-commerce platform delivering a smooth and responsive shopping experience.\n\n" +
+        "● Built with React 19, TypeScript, and Tailwind CSS.\n" +
+        "● Features product browsing, search & filter, and a shopping cart with persistent storage.\n" +
+        "● Integrated Framer Motion for sleek animations.\n" +
+        "● Fully responsive and structured for scalability.\n" +
+        "● Backend and secure authentication are in progress for live deployment.",
+
+      image: "/zyora.jpg",
+      live: "https://zyora.vercel.app/",
     },
     {
       title: "TrackKit",
