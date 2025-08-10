@@ -26,7 +26,7 @@ const About: React.FC = () => {
             </h3>
             <p className="text-sm sm:text-base md:text-lg leading-relaxed">
               Hi! I'm Mohammed Yasir Arafath, a Frontend Developer at Trangla
-              Innovations with 1.2+ years of experience in building modern,
+              Innovations with 1.3 years of experience in building modern,
               user-friendly web applications. I hold a Bachelor's degree in
               Electrical & Electronics Engineering (2024). My journey into tech
               started with curiosity and grew through hands-on projects and
