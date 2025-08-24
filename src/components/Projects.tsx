@@ -48,6 +48,19 @@ const Projects: React.FC = () => {
 
   const personalProjects: Project[] = [
     {
+      title: "TrackKit",
+      description:
+        "TrackKit is a lightweight inventory and sales management application designed to help small businesses seamlessly manage their products, track sales, and get a clear overview of their performance.\n\n" +
+        "● Built an easy-to-use app to help small shops keep track of their products and sales.\n" +
+        "● Designed a clean and simple website using modern tools like Next.js and Tailwind CSS so it works well on any device.\n" +
+        "● Connected the app to a database using Prisma, allowing shop owners to safely save and manage their information.\n" +
+        "● Added a secure login and registration system with NextAuth.js so each user's data is kept private.\n" +
+        "● Included key features like adding new products, recording sales, and a dashboard that shows important info like stock levels and total revenue.",
+      image: "/trackkit.jpg",
+      readme: "https://github.com/mdyasir1/TrackkIt",
+      live: "https://trackkit.vercel.app",
+    },
+    {
       title: "Zyora",
       description:
         "Zyora is a modern e-commerce platform delivering a smooth and responsive shopping experience.\n\n" +
@@ -59,19 +72,6 @@ const Projects: React.FC = () => {
 
       image: "/zyora.jpg",
       live: "https://zyora.vercel.app/",
-    },
-    {
-      title: "TrackKit",
-      description:
-        "TrackKit is a lightweight inventory and sales management tool designed for small shop vendors to manage products and stock effectively.\n\n" +
-        "● Built with Next.js, TypeScript, and Tailwind CSS.\n" +
-        "● Features two core modules: Add to Inventory and Sell Items.\n" +
-        "● Implemented custom GET, POST, and PUT APIs to manage product stock levels.\n" +
-        "● Displays real-time stock status and tracks revenue updates.\n" +
-        "● Focused on usability and clarity for non-technical users.\n" +
-        "● Backend enhancements and data persistence features are currently being developed.",
-      image: "/trackkit.jpg",
-      live: "https://trackkit.vercel.app",
     },
   ];
 
@@ -93,9 +93,8 @@ const Projects: React.FC = () => {
           }}
           className="relative rounded-lg overflow-hidden shadow-lg"
         >
-          {/* Tag only for Personal */}
           {isPersonal && (
-            <span className="absolute top-2 left-2 bg-violet-500 text-white text-xs px-2 py-1 rounded">
+            <span className="absolute top-2 left-2 bg-violet-500 text-white text-xs px-2 py-1 rounded z-2">
               Personal
             </span>
           )}
@@ -144,6 +143,22 @@ const Projects: React.FC = () => {
                 <p className="text-slate-400 text-xs sm:text-sm md:text-base whitespace-pre-line">
                   {project.description}
                 </p>
+                
+                {/* --- THIS IS THE FIX --- */}
+                {/* It checks for the `readme` property and renders a clickable link */}
+                {project.readme && (
+                  <p className="text-slate-400 text-xs sm:text-sm md:text-base mt-2">
+                    ● For more technical details, please see the{" "}
+                    <a
+                      href={project.readme}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sky-400 underline hover:text-sky-300 transition-colors"
+                    >
+                      README.md
+                    </a>
+                  </p>
+                )}
               </motion.div>
             )}
           </div>
@@ -154,7 +169,6 @@ const Projects: React.FC = () => {
   return (
     <div style={{ backgroundColor: "#0f172a" }} className="w-full min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Real-Time Projects Section */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#38bdf8] border-b-4 border-[#38bdf8] inline-block mb-8">
           Real Time Projects
         </h2>
@@ -162,7 +176,6 @@ const Projects: React.FC = () => {
           {renderProjects(companyProjects)}
         </div>
 
-        {/* Personal Projects Section */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#38bdf8] border-b-4 border-[#38bdf8] inline-block mb-8">
           Personal Projects
         </h2>

@@ -6,6 +6,7 @@ export interface Project {
   description: string;
   image: string;
   live?: string;
+  readme?: string;
 }
 
 // Form Data Types
