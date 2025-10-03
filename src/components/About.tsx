@@ -26,7 +26,7 @@ const About: React.FC = () => {
             </h3>
             <p className="text-sm sm:text-base md:text-lg leading-relaxed">
               Hi! I'm Mohammed Yasir Arafath, a Frontend Developer at Trangla
-              Innovations with 1.3 years of experience in building modern,
+              Innovations with approx 2 years of experience in building modern,
               user-friendly web applications. I hold a Bachelor's degree in
               Electrical & Electronics Engineering (2024). My journey into tech
               started with curiosity and grew through hands-on projects and
@@ -45,32 +45,37 @@ const About: React.FC = () => {
               Technical Expertise
             </h3>
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-slate-200">
-              I build modern user interfaces using{" "}
+              I build modern, responsive user interfaces using{" "}
               <span style={{ color: "#38bdf8" }}>HTML5</span>,{" "}
               <span style={{ color: "#38bdf8" }}>CSS3</span>, and{" "}
-              <span style={{ color: "#38bdf8" }}>JavaScript</span>. I work with
-              popular tools like{" "}
+              <span style={{ color: "#38bdf8" }}>JavaScript</span>, and create
+              dynamic web apps with{" "}
               <span style={{ color: "#38bdf8" }}>React.js</span>,{" "}
               <span style={{ color: "#38bdf8" }}>TypeScript</span>, and{" "}
-              <span style={{ color: "#38bdf8" }}>Tailwind CSS</span> to create
-              fast and responsive web apps. I use UI libraries such as{" "}
-              <span style={{ color: "#38bdf8" }}>Material UI</span>,{" "}
-              <span style={{ color: "#38bdf8" }}>shadcn</span> etc.. to design
-              clean and consistent layouts. I’m also comfortable with{" "}
+              <span style={{ color: "#38bdf8" }}>Tailwind CSS</span>. I leverage
+              UI libraries such as{" "}
+              <span style={{ color: "#38bdf8" }}>Material UI</span> and{" "}
+              <span style={{ color: "#38bdf8" }}>shadcn</span> to design clean,
+              consistent layouts. For full-stack development, I work with{" "}
               <span style={{ color: "#38bdf8" }}>Next.js</span> for server-side
               rendering, <span style={{ color: "#38bdf8" }}>Redux</span> for
-              managing state, and{" "}
-              <span style={{ color: "#38bdf8" }}>Recharts</span> for simple data
-              visualizations. To keep my code clean and consistent, I use{" "}
+              state management, and{" "}
+              <span style={{ color: "#38bdf8" }}>Recharts</span> for data
+              visualization. I have hands-on experience with backend
+              technologies including{" "}
+              <span style={{ color: "#38bdf8" }}>Express.js</span>,{" "}
+              <span style={{ color: "#38bdf8" }}>MySQL</span>, and{" "}
+              <span style={{ color: "#38bdf8" }}>Prisma</span>, and I am
+              comfortable with scripting using{" "}
+              <span style={{ color: "#38bdf8" }}>Python</span>. Additionally, I
+              have a working knowledge of cloud services like{" "}
+              <span style={{ color: "#38bdf8" }}>AWS</span> and containerization
+              with <span style={{ color: "#38bdf8" }}>Docker</span>. To keep my
+              code clean and maintainable, I use{" "}
               <span style={{ color: "#38bdf8" }}>Git</span>,{" "}
               <span style={{ color: "#38bdf8" }}>Prettier</span>,{" "}
               <span style={{ color: "#38bdf8" }}>ESLint</span>, and{" "}
-              <span style={{ color: "#38bdf8" }}>Husky</span> in my workflow. I
-              am also learning backend development with{" "}
-              <span style={{ color: "#38bdf8" }}>Express.js</span>,{" "}
-              <span style={{ color: "#38bdf8" }}>MySQL</span>, and{" "}
-              <span style={{ color: "#38bdf8" }}>Prisma</span> by working on
-              personal full-stack projects.
+              <span style={{ color: "#38bdf8" }}>Husky</span> in my workflow.
             </p>
           </motion.div>
 
@@ -85,10 +90,13 @@ const About: React.FC = () => {
               Professional Goals
             </h3>
             <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-              I aim to leverage my engineering background and web development
-              skills to create innovative, user-centric applications. I'm
-              particularly interested in full-stack development and continuously
-              expanding my knowledge in emerging technologies.
+              My goal is to become a well-rounded technology professional
+              capable of excelling across the full IT stack. I am passionate
+              about mastering frontend development, backend systems, DevOps
+              practices, and testing, while continuously exploring emerging
+              fields like AI and machine learning. I aspire to contribute to
+              innovative projects and take on leadership roles that drive
+              impactful solutions in the tech industry.
             </p>
           </motion.div>
 

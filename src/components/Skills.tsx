@@ -9,6 +9,12 @@ import {
   FaNodeJs,
   FaChartBar,
   FaDatabase,
+  FaAws,
+  FaDocker,
+  FaPython,
+  FaFigma,
+  FaBootstrap,
+
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -34,18 +40,24 @@ const frontendSkills: Skill[] = [
   { name: "Redux", icon: <SiRedux className="text-[#4479A1]" /> },
 
   { name: "Next Js", icon: <RiNextjsLine className="text-[#4479A1]" /> },
+  { name: "Figma", icon: <FaFigma className="text-[#4479A1]" /> },
   { name: "React Query", icon: <FaDatabase className="text-[#e535ab]" /> },
   { name: "Recharts", icon: <FaChartBar className="text-[#38bdf8]" /> },
   { name: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
+  { name: "Bootstrap", icon: <FaBootstrap className="text-[#4479A1]" /> },
   { name: "Git", icon: <FaGitAlt className="text-[#F05032]" /> },
   { name: "EsLint", icon: <SiEslint className="text-[#4479A1]" /> },
   { name: "Prettier", icon: <SiPrettier className="text-[#4479A1]" /> },
+    { name: "SQL", icon: <SiMysql className="text-[#4479A1]" /> },
+    
 ];
 
 const upcomingSkills: Skill[] = [
-  { name: "MySQL", icon: <SiMysql className="text-[#4479A1]" /> },
+  { name: "Python", icon: <FaPython className="text-[#38bdf8]" /> },
   { name: "Express.js", icon: <SiExpress className="text-[#4479A1]" /> },
   { name: "Prisma ORM", icon: <SiPrisma className="text-[#38bdf8]" /> },
+  { name: "AWS", icon: <FaAws className="text-[#38bdf8]" /> },
+  { name: "Docker", icon: <FaDocker className="text-[#38bdf8]" /> }
 ];
 
 const rotatingSkills = [
@@ -56,6 +68,7 @@ const rotatingSkills = [
   "React Query",
   "MySQL",
   "Prisma ORM",
+  "Python"
 ];
 
 const Skills: React.FC = () => {

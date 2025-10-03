@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
           </motion.h2>
           <motion.p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#94a3b8] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl leading-relaxed">
             I'm a frontend engineer specializing in building exceptional digital
-            experiences. With 1.6 years of experience in React development, I
+            experiences. With approx 2 years of experience in React development, I
             focus on creating responsive and user-friendly web applications that
             leave a lasting impression.
           </motion.p>

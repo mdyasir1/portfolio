@@ -44,6 +44,28 @@ const Projects: React.FC = () => {
         "● Focused on user experience for logistics teams.",
       image: "/project-2.jpg",
     },
+    {
+      title: "Brobrooke – Social Fitness Platform",
+      description:
+        "Brobrooke is a fitness-focused social networking platform where users can connect, track workouts, and share progress.\n\n" +
+        "● Built responsive UI with Next.js, TypeScript, and Tailwind CSS.\n" +
+        "● Developed features like workout logging, exercise history, and community posts.\n" +
+        "● Integrated authentication and profile management.\n" +
+        "● Designed reusable components using Shadcn UI.\n" +
+        "● Enhanced user engagement with social interaction and fitness tracking.",
+      image: "/fitness.jpg",
+    },
+    {
+      title: "TheWayFinder – Consultancy Web Application",
+      description:
+        "TheWayFinder is a consultancy-focused platform designed to showcase services and capture client inquiries.\n\n" +
+        "● Built responsive, SEO-friendly UI using Next.Js, TypeScript, and Tailwind CSS.\n" +
+        "● Developed a dynamic routing structure for smooth navigation.\n" +
+        "● Implemented contact form with API integration.\n" +
+        "● Ensured performance optimization.\n" +
+        "● Delivered a clean, professional design for consultancy branding.",
+      image: "/wayfinder.jpg",
+    },
   ];
 
   const personalProjects: Project[] = [
@@ -143,7 +165,7 @@ const Projects: React.FC = () => {
                 <p className="text-slate-400 text-xs sm:text-sm md:text-base whitespace-pre-line">
                   {project.description}
                 </p>
-                
+
                 {/* --- THIS IS THE FIX --- */}
                 {/* It checks for the `readme` property and renders a clickable link */}
                 {project.readme && (
