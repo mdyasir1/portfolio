@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
               <img
                 src="/Y.svg"
                 alt="Basic Logo"
-                className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7"
+                className="w-8 h-8 sm:h-10 sm:w-10 md:h-13 md:w-13 lg:h-15 lg:w-15"
               />
             </motion.div>
           </Link>
