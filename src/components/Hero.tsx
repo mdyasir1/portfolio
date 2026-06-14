@@ -97,6 +97,7 @@ export default function Hero() {
                 View My Work
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
+              
               <a
                 href="#contact"
                 className="inline-flex items-center justify-center rounded-full border border-[rgba(99,102,241,0.3)] bg-[rgba(99,102,241,0.05)] px-8 py-3.5 text-base font-semibold text-[var(--text)] transition-all duration-300 hover:border-[var(--accent)] hover:bg-[rgba(99,102,241,0.1)] hover:scale-105"
