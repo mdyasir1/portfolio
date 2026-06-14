@@ -26,13 +26,6 @@ A dark-themed portfolio built with Next.js 16, TypeScript, and Tailwind CSS. Sho
 npm install
 ```
 
-Copy `.env.local` and add your email credentials:
-
-```
-EMAIL_USER=mdyasir4145@gmail.com
-EMAIL_PASS=your-app-password
-```
-
 Run:
 
 ```bash

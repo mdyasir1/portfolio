@@ -30,7 +30,7 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yasirarafath.vercel.app"),
+  metadataBase: new URL("https://mdyasirarafath.vercel.app"),
   title: "M Yasir Arafath | Frontend Developer – React, Next.js, UI Engineering",
   description:
     "Frontend Developer with 2+ years experience building modern web applications using React, Next.js, TypeScript, and Tailwind CSS. Currently at SmartEdge Solutions building Areeva AI.",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     description:
       "Frontend Developer specializing in React, Next.js, and modern UI engineering. Based in Hyderabad, India.",
     type: "website",
-    url: "https://yasirarafath.vercel.app/",
+    url: "https://mdyasirarafath.vercel.app/",
     images: [{ url: "/yasir.png" }],
   },
   twitter: {
@@ -94,8 +94,8 @@ export default function RootLayout({
               "@type": "Person",
               name: "M Yasir Arafath",
               alternateName: "Mohammad Yasir Arafath",
-              url: "https://yasirarafath.vercel.app",
-              image: "https://yasirarafath.vercel.app/yasir.png",
+              url: "https://mdyasirarafath.vercel.app",
+              image: "https://mdyasirarafath.vercel.app/yasir.png",
               sameAs: [
                 "https://www.linkedin.com/in/mdyasirarafath/",
                 "https://github.com/mdyasir1",
