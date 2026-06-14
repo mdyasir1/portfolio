@@ -1,131 +1,168 @@
-import React from "react";
-import { motion } from "framer-motion";
+'use client';
 
-const About: React.FC = () => {
+import { motion } from 'framer-motion';
+
+const stats = [
+  { value: '2+', label: 'Years of Experience' },
+  { value: '10+', label: 'Projects Delivered' },
+  { value: '2', label: 'Companies Worked' },
+  { value: '∞', label: 'Lines of Code' },
+];
+
+export default function About() {
   return (
-    <div style={{ backgroundColor: "#0f172a" }} className="w-full min-h-screen">
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
-        <div className="pb-4 sm:pb-6 md:pb-8 flex justify-between items-center gap-4 sm:gap-6 md:gap-8">
-          <h2
-            style={{ color: "#38bdf8", borderBottom: "4px solid #38bdf8" }}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold inline"
+    <section id="about" className="relative overflow-hidden border-t border-[rgba(99,102,241,0.08)] bg-[var(--bg)] py-24 px-6">
+      <div className="absolute inset-x-0 top-0 h-48 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.1),transparent_40%)]" />
+
+      <div className="relative mx-auto max-w-6xl px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-6"
+        >
+          <p
+            className="text-xs tracking-[0.35em] text-[var(--accent3)] uppercase"
+            style={{ fontFamily: 'var(--font-jetbrains)' }}
           >
             About Me
-          </h2>
-        </div>
+          </p>
+        </motion.div>
 
-        <div className="grid gap-4 sm:gap-6 md:gap-8 text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="bg-[#1e293b] p-4 sm:p-5 md:p-6 rounded-lg border-2 border-[#38bdf8]"
-          >
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-[#38bdf8]">
-              Professional Summary
-            </h3>
-            <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-              Hi! I'm Mohammed Yasir Arafath, a Frontend Developer at Trangla
-              Innovations with approx 2 years of experience in building modern,
-              user-friendly web applications. I hold a Bachelor's degree in
-              Electrical & Electronics Engineering (2024). My journey into tech
-              started with curiosity and grew through hands-on projects and
-              continuous learning. I enjoy turning ideas into clean, functional,
-              and user-focused digital experiences.
-            </p>
-          </motion.div>
+        <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] items-center">
+          {/* Left Column */}
+          <div className="space-y-8">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl font-bold tracking-[-0.04em] text-white sm:text-5xl"
+              style={{ fontFamily: 'var(--font-syne)' }}
+            >
+              The Developer Behind
+              <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent3)] bg-clip-text text-transparent"> the Code</span>
+            </motion.h2>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-[#1e293b] p-4 sm:p-5 md:p-6 rounded-lg border-2 border-[#38bdf8]"
-          >
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-[#38bdf8]">
-              Technical Expertise
-            </h3>
-            <p className="text-sm sm:text-base md:text-lg leading-relaxed text-slate-200">
-              I build modern, responsive user interfaces using{" "}
-              <span style={{ color: "#38bdf8" }}>HTML5</span>,{" "}
-              <span style={{ color: "#38bdf8" }}>CSS3</span>, and{" "}
-              <span style={{ color: "#38bdf8" }}>JavaScript</span>, and create
-              dynamic web apps with{" "}
-              <span style={{ color: "#38bdf8" }}>React.js</span>,{" "}
-              <span style={{ color: "#38bdf8" }}>TypeScript</span>, and{" "}
-              <span style={{ color: "#38bdf8" }}>Tailwind CSS</span>. I leverage
-              UI libraries such as{" "}
-              <span style={{ color: "#38bdf8" }}>Material UI</span> and{" "}
-              <span style={{ color: "#38bdf8" }}>shadcn</span> to design clean,
-              consistent layouts. For full-stack development, I work with{" "}
-              <span style={{ color: "#38bdf8" }}>Next.js</span> for server-side
-              rendering, <span style={{ color: "#38bdf8" }}>Redux</span> for
-              state management, and{" "}
-              <span style={{ color: "#38bdf8" }}>Recharts</span> for data
-              visualization. I have hands-on experience with backend
-              technologies including{" "}
-              <span style={{ color: "#38bdf8" }}>Express.js</span>,{" "}
-              <span style={{ color: "#38bdf8" }}>MySQL</span>, and{" "}
-              <span style={{ color: "#38bdf8" }}>Prisma</span>, and I am
-              comfortable with scripting using{" "}
-              <span style={{ color: "#38bdf8" }}>Python</span>. Additionally, I
-              have a working knowledge of cloud services like{" "}
-              <span style={{ color: "#38bdf8" }}>AWS</span> and containerization
-              with <span style={{ color: "#38bdf8" }}>Docker</span>. To keep my
-              code clean and maintainable, I use{" "}
-              <span style={{ color: "#38bdf8" }}>Git</span>,{" "}
-              <span style={{ color: "#38bdf8" }}>Prettier</span>,{" "}
-              <span style={{ color: "#38bdf8" }}>ESLint</span>, and{" "}
-              <span style={{ color: "#38bdf8" }}>Husky</span> in my workflow.
-            </p>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="space-y-5 text-base leading-relaxed text-[var(--muted)]"
+            >
+              <p>
+                I&apos;m <span className="text-[var(--text)] font-medium">M Yasir Arafath</span>, a Frontend Developer
+                based in Hyderabad, India. I studied{' '}
+                <span className="text-[var(--accent3)]">Electrical &amp; Electronics Engineering</span>{' '}
+                at RGUKT Nuzvid (2024). I still remember inspecting my first webpage and
+                realizing I could make something appear on screen just by typing — that
+                moment pulled me into development, and I&apos;ve been building ever since.
+              </p>
+              <p>
+                I began my professional journey at{' '}
+                <span className="text-[var(--text)]">Trangla Innovations</span> as a Junior Frontend
+                Developer, where I worked across multiple projects — dashboards, e-commerce platforms,
+                and landing pages — honing my skills in React, TypeScript, and modern CSS.
+              </p>
+              <p>
+                Currently, I&apos;m at{' '}
+                <span className="text-[var(--text)]">SmartEdge Solutions</span>, leading the frontend
+                for <span className="text-[var(--accent3)]">Areeva AI</span> — a recruitment platform
+                that uses AI to handle interviews and candidate screening. I built the dashboard UIs,
+                interview interfaces, and wired everything to the backend APIs.
+              </p>
+              <p>
+                I try to write code that&apos;s easy to change and interfaces that don&apos;t
+                make people think twice. Outside of work, I&apos;m usually tinkering with a
+                side project or digging into something I don&apos;t understand yet.
+              </p>
+            </motion.div>
 
-          {/* Keeping the rest of your sections unchanged */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-[#1e293b] p-4 sm:p-5 md:p-6 rounded-lg border-2 border-[#38bdf8]"
-          >
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-[#38bdf8]">
-              Professional Goals
-            </h3>
-            <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-              My goal is to become a well-rounded technology professional
-              capable of excelling across the full IT stack. I am passionate
-              about mastering frontend development, backend systems, DevOps
-              practices, and testing, while continuously exploring emerging
-              fields like AI and machine learning. I aspire to contribute to
-              innovative projects and take on leadership roles that drive
-              impactful solutions in the tech industry.
-            </p>
-          </motion.div>
+            {/* Stat Cards */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="grid grid-cols-2 sm:grid-cols-4 gap-4"
+            >
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-2xl border border-[rgba(99,102,241,0.12)] bg-[rgba(16,22,38,0.6)] p-5 text-center backdrop-blur-sm hover:border-[rgba(99,102,241,0.3)] transition-all duration-300 hover:shadow-lg hover:shadow-[rgba(99,102,241,0.05)]"
+                >
+                  <p
+                    className="text-3xl font-bold bg-gradient-to-r from-[var(--accent)] to-[var(--accent3)] bg-clip-text text-transparent"
+                    style={{ fontFamily: 'var(--font-syne)' }}
+                  >
+                    {stat.value}
+                  </p>
+                  <p className="mt-1.5 text-xs tracking-[0.15em] text-[var(--muted)] uppercase">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+          </div>
 
+          {/* Right Column: Orbital Monogram */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="bg-[#1e293b] p-4 sm:p-5 md:p-6 rounded-lg border-2 border-[#38bdf8]"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative flex items-center justify-center"
           >
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-[#38bdf8]">
-              What I Bring to the Table
-            </h3>
-            <ul className="list-disc list-inside text-sm sm:text-base md:text-lg leading-relaxed space-y-1 sm:space-y-2">
-              <li>Strong problem-solving skills with a practical approach</li>
-              <li>Focus on writing clean, readable, and maintainable code</li>
-              <li>Hands-on experience building responsive, modern web apps</li>
-              <li>
-                Quick learner with the ability to adapt to new tools and
-                frameworks
-              </li>
-              <li>
-                Driven to create smooth, fast, and user-friendly experiences
-              </li>
-            </ul>
+            <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px]">
+              {/* Orbital rings */}
+              <div
+                className="absolute inset-0 rounded-full border border-[rgba(99,102,241,0.15)]"
+                style={{ animation: 'rotateSlow 8s linear infinite' }}
+              >
+                <div
+                  className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[var(--accent)]"
+                  style={{ boxShadow: '0 0 20px rgba(99,102,241,0.5)' }}
+                />
+              </div>
+              <div
+                className="absolute inset-[15px] rounded-full border border-[rgba(6,182,212,0.12)]"
+                style={{ animation: 'rotateSlow 12s linear infinite reverse' }}
+              >
+                <div
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 rounded-full bg-[var(--accent3)]"
+                  style={{ boxShadow: '0 0 15px rgba(6,182,212,0.4)' }}
+                />
+              </div>
+              <div
+                className="absolute inset-[30px] rounded-full border border-[rgba(139,92,246,0.1)]"
+                style={{ animation: 'rotateSlow 15s linear infinite' }}
+              >
+                <div
+                  className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[var(--accent2)]"
+                  style={{ boxShadow: '0 0 15px rgba(139,92,246,0.4)' }}
+                />
+              </div>
+
+              {/* Center: Profile Image */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] rounded-full border-2 border-[rgba(99,102,241,0.3)] overflow-hidden"
+                  style={{
+                    boxShadow: '0 0 30px rgba(99,102,241,0.15), inset 0 0 30px rgba(99,102,241,0.05)',
+                  }}
+                >
+                  <img
+                    src="/yasir.png"
+                    alt="M Yasir Arafath"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default About;
+}
