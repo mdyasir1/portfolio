@@ -67,8 +67,11 @@ export const metadata: Metadata = {
     images: ["/yasir.png"],
   },
   robots: "index, follow",
+  verification: {
+    google: "pXUmuNOtaE_Vu8aOhq4gsVux5jy2aD7lWfFd71Ly2W0",
+  },
   alternates: {
-    canonical: "https://yasirarafath.vercel.app",
+    canonical: "https://mdyasirarafath.vercel.app",
   },
 };
 
