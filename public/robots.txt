@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mdyasir.me/sitemap.xml
+
+# Disallow admin/API routes
+Disallow: /api/
+Disallow: /_next/
