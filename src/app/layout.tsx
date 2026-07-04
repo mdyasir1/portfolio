@@ -101,7 +101,7 @@ export const metadata: Metadata = {
   },
   robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   verification: {
-    google: "pXUmuNOtaE_Vu8aOhq4gsVux5jy2aD7lWfFd71Ly2W0",
+    google: "pYRrz1oqPOQS3jOVVcCXYz94t7sFAXvT6k5ZTJC5pNY",
   },
   alternates: {
     canonical: "https://mdyasir.me",
