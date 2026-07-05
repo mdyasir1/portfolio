@@ -26,9 +26,9 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mdyasir.me"),
-  title: "M Yasir Arafath | Software Developer & Frontend Engineer – React, Next.js, TypeScript",
+  title: "M Yasir Arafath | Software Developer – React, Next.js, TypeScript",
   description:
-    "M Yasir Arafath is a Software Developer and Frontend Engineer with 2+ years of experience building modern web applications using React, Next.js, TypeScript, and Tailwind CSS. Currently at SmartEdge Solutions building Areeva AI. Available for hire.",
+    "M Yasir Arafath is a Software Developer with 2+ years of experience building modern web applications using React, Next.js, TypeScript, and Tailwind CSS. Currently at SmartEdge Solutions building Areeva AI. Available for hire.",
   keywords: [
     "M Yasir Arafath",
     "Yasir",
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
     apple: "/yasir.png",
   },
   openGraph: {
-    title: "M Yasir Arafath | Software Developer & Frontend Engineer",
+    title: "M Yasir Arafath | Software Developer",
     description:
-      "Software Developer and Frontend Engineer specializing in React, Next.js, TypeScript, and modern UI engineering. Based in Hyderabad, India. Available for hire.",
+      "Software Developer specializing in React, Next.js, TypeScript, and modern UI engineering. Based in Hyderabad, India. Available for hire.",
     type: "website",
     url: "https://mdyasir.me/",
     images: [
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
         url: "/yasir.png",
         width: 800,
         height: 800,
-        alt: "M Yasir Arafath - Software Developer & Frontend Engineer",
+        alt: "M Yasir Arafath - Software Developer from Hyderabad, India",
       },
     ],
     siteName: "M Yasir Arafath - Portfolio",
@@ -88,9 +88,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "M Yasir Arafath | Software Developer & Frontend Engineer",
+    title: "M Yasir Arafath | Software Developer",
     description:
-      "Software Developer and Frontend Engineer specializing in React, Next.js, TypeScript, and modern UI engineering. Available for hire.",
+      "Software Developer specializing in React, Next.js, TypeScript, and modern UI engineering. Available for hire.",
     images: ["/yasir.png"],
     creator: "@mdyasirarafath",
   },
@@ -129,12 +129,17 @@ export default function RootLayout({
                 name: "M Yasir Arafath",
                 alternateName: ["Mohammad Yasir Arafath", "Yasir Arafath"],
                 url: "https://mdyasir.me",
-                image: "https://mdyasir.me/yasir.png",
+                image: {
+                  "@type": "ImageObject",
+                  url: "https://mdyasir.me/yasir.png",
+                  caption: "M Yasir Arafath - Software Developer",
+                  description: "Photo of M Yasir Arafath, a Software Developer from Hyderabad, India",
+                },
                 sameAs: [
                   "https://www.linkedin.com/in/mdyasirarafath/",
                   "https://github.com/mdyasir1",
                 ],
-                jobTitle: "Software Developer & Frontend Engineer",
+                jobTitle: "Software Developer",
                 worksFor: {
                   "@type": "Organization",
                   name: "SmartEdge Solutions",
@@ -160,7 +165,7 @@ export default function RootLayout({
                   "Express.js",
                   "MongoDB",
                 ],
-                description: "M Yasir Arafath is a Software Developer and Frontend Engineer with 2+ years of experience building modern web applications using React, Next.js, TypeScript, and Tailwind CSS.",
+                description: "M Yasir Arafath is a Software Developer from Hyderabad, India with 2+ years of experience building modern web applications using React, Next.js, TypeScript, and Tailwind CSS.",
                 email: "mdyasir4145@gmail.com",
                 availableFor: "Full-time, Freelance, Contract",
               },
@@ -173,20 +178,66 @@ export default function RootLayout({
                   "@type": "Person",
                   name: "M Yasir Arafath",
                 },
-                description: "Portfolio of M Yasir Arafath, a Software Developer and Frontend Engineer specializing in React, Next.js, and modern web technologies.",
+                description: "Portfolio of M Yasir Arafath, a Software Developer specializing in React, Next.js, and modern web technologies.",
                 inLanguage: "en-US",
               },
               {
                 "@context": "https://schema.org",
                 "@type": "ProfilePage",
                 url: "https://mdyasir.me",
-                name: "M Yasir Arafath | Software Developer & Frontend Engineer",
-                description: "Professional portfolio of M Yasir Arafath - Software Developer and Frontend Engineer.",
+                name: "M Yasir Arafath | Software Developer",
+                description: "Professional portfolio of M Yasir Arafath - Software Developer.",
                 mainEntity: {
                   "@type": "Person",
                   name: "M Yasir Arafath",
-                  jobTitle: "Software Developer & Frontend Engineer",
+                  jobTitle: "Software Developer",
                 },
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "Who is M Yasir Arafath?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "M Yasir Arafath is a Software Developer from Hyderabad, India with 2+ years of experience. He currently works at SmartEdge Solutions building Areeva AI — an AI-powered recruitment platform.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What technologies does M Yasir work with?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "He works with React.js, Next.js, TypeScript, JavaScript, Tailwind CSS, Node.js, Express.js, MongoDB, Redux, and Git.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Where does M Yasir currently work?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "He works at SmartEdge Solutions in Hyderabad, building Areeva AI — a recruitment platform that uses AI to interview and screen candidates.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What projects has M Yasir built?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "He has delivered 10+ projects including Areeva AI, a hotel booking system, a fleet management dashboard, a social fitness app, TrackKit (inventory app), and Zyora (e-commerce storefront).",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Is M Yasir available for hire?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes, M Yasir is available for full-time, freelance, and contract opportunities. Contact him at mdyasir4145@gmail.com or through the contact form on this site.",
+                    },
+                  },
+                ],
               },
             ]),
           }}

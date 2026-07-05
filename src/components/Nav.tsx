@@ -51,7 +51,7 @@ export default function Nav() {
           >
             <img
               src="/yasir.png"
-              alt="M Yasir Arafath"
+              alt="M Yasir Arafath - Software Developer"
               className="w-10 h-10 rounded-full object-cover"
               style={{ border: '1px solid rgba(212, 175, 55, 0.2)' }}
             />

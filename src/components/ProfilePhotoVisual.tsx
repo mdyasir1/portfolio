@@ -82,7 +82,7 @@ export default function ProfilePhotoVisual() {
       >
         <img
           src="/yasir.png"
-          alt="M Yasir Arafath"
+          alt="M Yasir Arafath - Software Developer"
           className="w-full h-full object-cover"
         />
         {/* Photo overlay gradient */}

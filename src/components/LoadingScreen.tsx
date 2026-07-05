@@ -95,10 +95,10 @@ export default function LoadingScreen() {
           }}
         >
           <img
-            src="/yasir.png"
-            alt="M Yasir Arafath"
-            className="w-full h-full object-cover"
-          />
+              src="/yasir.png"
+              alt="M Yasir Arafath - Software Developer"
+              className="w-full h-full object-cover"
+            />
         </div>
       </div>
 
