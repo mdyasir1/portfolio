@@ -1,166 +1,208 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ProfilePhotoVisual from './ProfilePhotoVisual';
+
+gsap.registerPlugin(ScrollTrigger);
+
+function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          const duration = 2000;
+          const start = performance.now();
+          const animate = (now: number) => {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.floor(eased * end));
+            if (progress < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [end]);
+
+  return (
+    <span ref={ref}>
+      {count}{suffix}
+    </span>
+  );
+}
 
 const stats = [
-  { value: '2+', label: 'Years of Experience' },
-  { value: '10+', label: 'Projects Delivered' },
-  { value: '2', label: 'Companies Worked' },
-  { value: '∞', label: 'Lines of Code' },
+  { value: 2, suffix: '+', label: 'Years of Experience' },
+  { value: 10, suffix: '+', label: 'Projects Delivered' },
+  { value: 2, suffix: '', label: 'Companies Worked' },
+  { value: 50, suffix: 'K+', label: 'Lines of Code' },
 ];
 
 export default function About() {
-  return (
-    <section id="about" className="relative overflow-hidden border-t border-[rgba(99,102,241,0.08)] bg-[var(--bg)] py-24 px-6">
-      <div className="absolute inset-x-0 top-0 h-48 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.1),transparent_40%)]" />
+  const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const bioRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
-      <div className="relative mx-auto max-w-6xl px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(headingRef.current,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
+          scrollTrigger: { trigger: headingRef.current, start: 'top 85%', toggleActions: 'play none none none' },
+        }
+      );
+
+      const paragraphs = bioRef.current?.querySelectorAll('p');
+      if (paragraphs) {
+        gsap.fromTo(paragraphs,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1, y: 0, duration: 0.7, stagger: 0.15, ease: 'power3.out',
+            scrollTrigger: { trigger: bioRef.current, start: 'top 80%', toggleActions: 'play none none none' },
+          }
+        );
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      id="about"
+      className="relative overflow-hidden py-20 sm:py-24 px-6"
+      style={{ borderTop: '1px solid rgba(212, 175, 55, 0.08)' }}
+    >
+      <div
+        className="absolute inset-x-0 top-0 h-48 pointer-events-none"
+        style={{ background: 'radial-gradient(circle at top, rgba(212, 175, 55, 0.04), transparent 40%)' }}
+      />
+
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+        {/* Label */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-6"
+          className="text-xs tracking-[0.35em] uppercase mb-6"
+          style={{ fontFamily: 'var(--font-jetbrains)', color: 'var(--accent)' }}
         >
-          <p
-            className="text-xs tracking-[0.35em] text-[var(--accent3)] uppercase"
-            style={{ fontFamily: 'var(--font-jetbrains)' }}
-          >
-            About Me
-          </p>
-        </motion.div>
+          About Me
+        </motion.p>
 
-        <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] items-center">
+        <div className="grid lg:grid-cols-[1fr_0.6fr] gap-12 lg:gap-16 items-center">
           {/* Left Column */}
           <div className="space-y-8">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl font-bold tracking-[-0.04em] text-white sm:text-5xl"
-              style={{ fontFamily: 'var(--font-syne)' }}
+            <h2
+              ref={headingRef}
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.04em] text-white"
+              style={{ fontFamily: 'var(--font-heading)', opacity: 0 }}
             >
               The Developer Behind
-              <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent3)] bg-clip-text text-transparent"> the Code</span>
-            </motion.h2>
+              <span className="name-gradient"> the Code</span>
+            </h2>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-5 text-base leading-relaxed text-[var(--muted)]"
-            >
+            <div ref={bioRef} className="space-y-5 text-sm sm:text-base leading-relaxed" style={{ color: 'var(--muted)' }}>
               <p>
-                I&apos;m <span className="text-[var(--text)] font-medium">M Yasir Arafath</span>, a Frontend Developer
+                I&apos;m <span className="font-medium" style={{ color: 'var(--text)' }}>M Yasir Arafath</span>, a software developer
                 based in Hyderabad, India. I studied{' '}
-                <span className="text-[var(--accent3)]">Electrical &amp; Electronics Engineering</span>{' '}
+                <span style={{ color: 'var(--accent)' }}>Electrical &amp; Electronics Engineering</span>{' '}
                 at RGUKT Nuzvid (2024). I still remember inspecting my first webpage and
-                realizing I could make something appear on screen just by typing — that
-                moment pulled me into development, and I&apos;ve been building ever since.
+                realising I could make something appear on screen just by typing — that
+                curiosity pulled me into development, and I haven&apos;t stopped since.
               </p>
               <p>
-                I began my professional journey at{' '}
-                <span className="text-[var(--text)]">Trangla Innovations</span> as a Junior Frontend
-                Developer, where I worked across multiple projects — dashboards, e-commerce platforms,
-                and landing pages — honing my skills in React, TypeScript, and modern CSS.
+                I started my career at{' '}
+                <span style={{ color: 'var(--text)' }}>Trangla Innovations</span> as a Junior Frontend
+                Developer, working across dashboards, e-commerce platforms, and landing
+                pages. That role gave me a solid foundation in React, TypeScript, and
+                the kind of CSS that actually behaves on every screen size.
               </p>
               <p>
-                Currently, I&apos;m at{' '}
-                <span className="text-[var(--text)]">SmartEdge Solutions</span>, leading the frontend
-                for <span className="text-[var(--accent3)]">Areeva AI</span> — a recruitment platform
-                that uses AI to handle interviews and candidate screening. I built the dashboard UIs,
-                interview interfaces, and wired everything to the backend APIs.
+                Today, I&apos;m at{' '}
+                <span style={{ color: 'var(--text)' }}>SmartEdge Solutions</span>, working on{' '}
+                <span style={{ color: 'var(--accent)' }}>Areeva AI</span> — a recruitment
+                platform that uses AI to streamline interviews and candidate screening.
+                I build the dashboard interfaces, integrate with backend APIs, and
+                try to make the whole experience feel seamless.
               </p>
               <p>
-                I try to write code that&apos;s easy to change and interfaces that don&apos;t
-                make people think twice. Outside of work, I&apos;m usually tinkering with a
-                side project or digging into something I don&apos;t understand yet.
+                Outside of work, I&apos;m usually experimenting with a side project or
+                going down a rabbit hole I didn&apos;t plan on. I care about writing
+                code that&apos;s easy to maintain and interfaces that don&apos;t
+                make people think twice.
               </p>
-            </motion.div>
+            </div>
 
             {/* Stat Cards */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-4"
-            >
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
               {stats.map((stat) => (
-                <div
+                <motion.div
                   key={stat.label}
-                  className="rounded-2xl border border-[rgba(99,102,241,0.12)] bg-[rgba(16,22,38,0.6)] p-5 text-center backdrop-blur-sm hover:border-[rgba(99,102,241,0.3)] transition-all duration-300 hover:shadow-lg hover:shadow-[rgba(99,102,241,0.05)]"
-                >
-                  <p
-                    className="text-3xl font-bold bg-gradient-to-r from-[var(--accent)] to-[var(--accent3)] bg-clip-text text-transparent"
-                    style={{ fontFamily: 'var(--font-syne)' }}
-                  >
-                    {stat.value}
-                  </p>
-                  <p className="mt-1.5 text-xs tracking-[0.15em] text-[var(--muted)] uppercase">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Right Column: Orbital Monogram */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative flex items-center justify-center"
-          >
-            <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px]">
-              {/* Orbital rings */}
-              <div
-                className="absolute inset-0 rounded-full border border-[rgba(99,102,241,0.15)]"
-                style={{ animation: 'rotateSlow 8s linear infinite' }}
-              >
-                <div
-                  className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[var(--accent)]"
-                  style={{ boxShadow: '0 0 20px rgba(99,102,241,0.5)' }}
-                />
-              </div>
-              <div
-                className="absolute inset-[15px] rounded-full border border-[rgba(6,182,212,0.12)]"
-                style={{ animation: 'rotateSlow 12s linear infinite reverse' }}
-              >
-                <div
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 rounded-full bg-[var(--accent3)]"
-                  style={{ boxShadow: '0 0 15px rgba(6,182,212,0.4)' }}
-                />
-              </div>
-              <div
-                className="absolute inset-[30px] rounded-full border border-[rgba(139,92,246,0.1)]"
-                style={{ animation: 'rotateSlow 15s linear infinite' }}
-              >
-                <div
-                  className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[var(--accent2)]"
-                  style={{ boxShadow: '0 0 15px rgba(139,92,246,0.4)' }}
-                />
-              </div>
-
-              {/* Center: Profile Image */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] rounded-full border-2 border-[rgba(99,102,241,0.3)] overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="rounded-2xl p-4 sm:p-5 text-center card-hover"
                   style={{
-                    boxShadow: '0 0 30px rgba(99,102,241,0.15), inset 0 0 30px rgba(99,102,241,0.05)',
+                    border: '1px solid rgba(212, 175, 55, 0.1)',
+                    background: 'rgba(17, 17, 17, 0.6)',
                   }}
                 >
-                  <img
-                    src="/yasir.png"
-                    alt="M Yasir Arafath"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+                  <p
+                    className="text-2xl sm:text-3xl font-bold name-gradient"
+                    style={{ fontFamily: 'var(--font-heading)' }}
+                  >
+                    <Counter end={stat.value} suffix={stat.suffix} />
+                  </p>
+                  <p
+                    className="mt-1.5 text-[10px] sm:text-xs tracking-[0.12em] uppercase"
+                    style={{ color: 'var(--muted)' }}
+                  >
+                    {stat.label}
+                  </p>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
+          </div>
+
+          {/* Right Column: Profile Photo */}
+          {!isMobile && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="hidden lg:flex items-center justify-center h-[360px]"
+            >
+              <ProfilePhotoVisual />
+            </motion.div>
+          )}
         </div>
       </div>
     </section>

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { Syne, Inter, JetBrains_Mono, Raleway } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
-import BackgroundFX from "@/components/BackgroundFX";
+import LoadingScreen from "@/components/LoadingScreen";
+import CustomCursor from "@/components/CustomCursor";
+import GradientMesh from "@/components/ParticleGalaxy";
 
-const syne = Syne({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-heading",
   display: "swap",
 });
 
@@ -20,13 +22,6 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains",
   display: "swap",
-});
-
-const raleway = Raleway({
-  subsets: ["latin"],
-  variable: "--font-raleway",
-  display: "swap",
-  weight: ["300", "900"],
 });
 
 export const metadata: Metadata = {
@@ -107,7 +102,7 @@ export const metadata: Metadata = {
     canonical: "https://mdyasir.me",
   },
   other: {
-    "theme-color": "#0a0e1a",
+    "theme-color": "#0a0a0a",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
   },
@@ -121,7 +116,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${inter.variable} ${jetbrainsMono.variable} ${raleway.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <script
@@ -196,8 +191,10 @@ export default function RootLayout({
             ]),
           }}
         />
+        <LoadingScreen />
+        <CustomCursor />
+        <GradientMesh />
         <SmoothScroll />
-        <BackgroundFX />
         {children}
       </body>
     </html>

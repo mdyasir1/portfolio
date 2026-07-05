@@ -1,6 +1,10 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
+import dynamic from 'next/dynamic';
+
+const GoldMesh3D = dynamic(() => import('./GoldMesh3D'), { ssr: false });
 
 const techStack = [
   'React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS',
@@ -8,171 +12,213 @@ const techStack = [
 ];
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const hiRef = useRef<HTMLSpanElement>(null);
+  const nameRef = useRef<HTMLSpanElement>(null);
+  const taglineRef = useRef<HTMLParagraphElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const statusRef = useRef<HTMLDivElement>(null);
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      setIsMobile(window.innerWidth < 768);
+    });
+    const handler = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handler);
+    return () => {
+      cancelAnimationFrame(id);
+      window.removeEventListener('resize', handler);
+    };
+  }, []);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ delay: 1.9 });
+
+      tl.fromTo(badgeRef.current,
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.35, ease: 'power3.out' }
+      )
+      .fromTo(hiRef.current,
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.35, ease: 'power4.out' },
+        '-=0.18'
+      )
+      .fromTo(nameRef.current,
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.4, ease: 'power4.out' },
+        '-=0.18'
+      )
+      .fromTo(taglineRef.current,
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.35, ease: 'power3.out' },
+        '-=0.18'
+      )
+      .fromTo(descRef.current,
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.35, ease: 'power3.out' },
+        '-=0.18'
+      )
+      .fromTo(ctaRef.current,
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.35, ease: 'power3.out' },
+        '-=0.18'
+      )
+      .fromTo(statusRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.3 },
+        '-=0.12'
+      )
+      .fromTo(marqueeRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.45 },
+        '-=0.18'
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative isolate min-h-screen flex flex-col justify-center overflow-hidden bg-[var(--bg)] pt-20">
-      <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 w-full">
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          {/* Left: Text content */}
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center gap-3 rounded-full border border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.06)] px-4 py-2 text-xs tracking-[0.35em] text-[var(--accent3)] shadow-sm backdrop-blur-sm"
-              style={{ fontFamily: 'var(--font-jetbrains)' }}
+    <section
+      ref={sectionRef}
+      className="relative isolate min-h-[100dvh] sm:min-h-screen flex flex-col justify-center overflow-hidden bg-transparent pt-16 sm:pt-20"
+    >
+      <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-6 lg:px-8 py-8 sm:py-16 w-full">
+        <div className="grid lg:grid-cols-[1fr_0.8fr] gap-8 lg:gap-12 items-center">
+          {/* Left Column */}
+          <div className="space-y-5 sm:space-y-8">
+            {/* Badge */}
+            <div
+              ref={badgeRef}
+              className="inline-flex items-center gap-2 sm:gap-3 rounded-full border border-[rgba(212,175,55,0.2)] bg-[rgba(212,175,55,0.05)] px-3 sm:px-4 py-2 text-[10px] sm:text-xs tracking-[0.25em] sm:tracking-[0.35em] shadow-sm backdrop-blur-sm"
+              style={{ fontFamily: 'var(--font-jetbrains)', opacity: 0, color: 'var(--accent)' }}
             >
               <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: 'var(--accent)' }} />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5" style={{ background: 'var(--accent)' }} />
               </span>
-              Frontend Developer · UI Engineer
-            </motion.div>
-
-            <div className="space-y-4">
-              <h1
-                className="leading-[1.05]"
-                style={{ fontFamily: 'var(--font-syne)' }}
-              >
-                <motion.span
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="block text-4xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.04em] text-white"
-                  style={{
-                    textShadow: '0 0 60px rgba(99,102,241,0.15), 0 0 120px rgba(99,102,241,0.05)',
-                  }}
-                >
-                  M Yasir
-                </motion.span>
-                <motion.span
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  className="block text-5xl sm:text-6xl lg:text-8xl font-black tracking-[-0.06em] mt-1 relative"
-                >
-                  <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent3)] bg-clip-text text-transparent"> Arafath</span>
-                </motion.span>
-              </h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-                className="text-xl sm:text-2xl font-medium text-[var(--muted)]"
-                style={{ fontFamily: 'var(--font-syne)' }}
-              >
-                I build interfaces that people love.
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.9 }}
-                className="text-base leading-relaxed text-[var(--muted)] max-w-xl"
-              >
-                Right now I&apos;m leading the frontend at{' '}
-                <span className="text-[var(--accent3)]">SmartEdge Solutions</span>,
-                building Areeva AI — an AI hiring platform. I&apos;ve spent 2+ years
-                working with startups and agencies, and I care most about building
-                software that works well for the people using it.
-              </motion.p>
-
+              Frontend Developer
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.1 }}
-              className="flex flex-col sm:flex-row gap-4"
+            <div className="space-y-3">
+              <h1
+                className="leading-[1.1]"
+                style={{ fontFamily: 'var(--font-heading)' }}
+              >
+                <span
+                  ref={hiRef}
+                  className="block text-lg sm:text-xl lg:text-2xl font-medium tracking-[-0.01em]"
+                  style={{ color: 'var(--muted)' }}
+                >
+                  Hi I&apos;m
+                </span>
+                <span
+                  ref={nameRef}
+                  className="block text-4xl sm:text-5xl lg:text-7xl font-black tracking-[-0.05em] mt-1 name-gradient"
+                >
+                  Yasir
+                </span>
+              </h1>
+
+              <p
+                ref={taglineRef}
+                className="text-base sm:text-xl font-medium"
+                style={{ fontFamily: 'var(--font-heading)', color: 'var(--muted)' }}
+              >
+                Crafting interfaces that feel effortless.
+              </p>
+
+              <p
+                ref={descRef}
+                className="text-sm sm:text-base leading-relaxed max-w-xl"
+                style={{ color: 'var(--muted)' }}
+              >
+                <span className="sm:hidden">Software developer at{' '}
+                  <span style={{ color: 'var(--accent)' }}>SmartEdge Solutions</span>,
+                  working on <span style={{ color: 'var(--accent)' }}>Areeva AI</span>.
+                  2+ years of hands-on experience building for the web.</span>
+                <span className="hidden sm:inline">Software developer at{' '}
+                  <span style={{ color: 'var(--accent)' }}>SmartEdge Solutions</span>,
+                  where I work on <span style={{ color: 'var(--accent)' }}>Areeva AI</span> —
+                  an AI-powered recruitment platform. Over the past two years, I&apos;ve
+                  shipped dashboards, e-commerce storefronts, and SaaS products across
+                  multiple startups, focusing on clean code and thoughtful interfaces.</span>
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <div
+              ref={ctaRef}
+              className="flex flex-wrap gap-2.5 sm:gap-4"
+              style={{ opacity: 0 }}
             >
               <a
                 href="#projects"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent2)] px-8 py-3.5 text-base font-semibold text-white shadow-xl shadow-[rgba(99,102,241,0.25)] transition-all duration-300 hover:shadow-[rgba(99,102,241,0.4)] hover:scale-105"
+                className="group inline-flex items-center justify-center gap-2 rounded-full px-5 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-black transition-all duration-300 active:scale-95"
+                style={{
+                  background: 'linear-gradient(135deg, var(--accent), var(--accent3))',
+                  boxShadow: '0 0 30px rgba(212, 175, 55, 0.2)',
+                }}
               >
                 View My Work
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
+                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
               </a>
-              
+
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-full border border-[rgba(99,102,241,0.3)] bg-[rgba(99,102,241,0.05)] px-8 py-3.5 text-base font-semibold text-[var(--text)] transition-all duration-300 hover:border-[var(--accent)] hover:bg-[rgba(99,102,241,0.1)] hover:scale-105"
+                className="inline-flex items-center justify-center rounded-full border px-5 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold transition-all duration-300 active:scale-95"
+                style={{
+                  borderColor: 'rgba(212, 175, 55, 0.3)',
+                  background: 'rgba(212, 175, 55, 0.05)',
+                  color: 'var(--text)',
+                }}
               >
                 Get In Touch
               </a>
-            </motion.div>
+            </div>
 
-            {/* Status badge */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1.3 }}
-              className="flex items-center gap-2 text-sm text-[var(--muted)]"
-              style={{ fontFamily: 'var(--font-jetbrains)' }}
+            {/* Status */}
+            <div
+              ref={statusRef}
+              className="flex items-center gap-2 text-sm"
+              style={{ fontFamily: 'var(--font-jetbrains)', color: 'var(--muted)', opacity: 0 }}
             >
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: '#22c55e' }} />
+                <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#22c55e' }} />
               </span>
               Available for new opportunities
-            </motion.div>
-          </motion.div>
-
-          {/* Right: 3D Cube */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-            className="relative mx-auto w-full max-w-md flex items-center justify-center"
-            style={{ minHeight: 320 }}
-          >
-            <div className="absolute w-72 h-72 bg-[var(--accent)]/5 rounded-full blur-3xl pointer-events-none" />
-            <div className="cube-scene">
-              <div className="cube">
-                <div className="cube-face cube-face-front">
-                  <span className="text-lg font-bold text-[var(--accent)]" style={{ fontFamily: 'var(--font-jetbrains)' }}>{"{ }"}</span>
-                  <span className="text-xs tracking-[0.1em] text-[var(--muted)] uppercase mt-1" style={{ fontFamily: 'var(--font-jetbrains)' }}>React</span>
-                </div>
-                <div className="cube-face cube-face-back">
-                  <span className="text-lg font-bold text-[var(--accent2)]" style={{ fontFamily: 'var(--font-jetbrains)' }}>N</span>
-                  <span className="text-xs tracking-[0.1em] text-[var(--muted)] uppercase mt-1" style={{ fontFamily: 'var(--font-jetbrains)' }}>Next.js</span>
-                </div>
-                <div className="cube-face cube-face-right">
-                  <span className="text-lg font-bold text-[#3178c6]" style={{ fontFamily: 'var(--font-jetbrains)' }}>TS</span>
-                  <span className="text-xs tracking-[0.1em] text-[var(--muted)] uppercase mt-1" style={{ fontFamily: 'var(--font-jetbrains)' }}>TypeScript</span>
-                </div>
-                <div className="cube-face cube-face-left">
-                  <span className="text-lg font-bold text-[#06b6d4]" style={{ fontFamily: 'var(--font-jetbrains)' }}>#</span>
-                  <span className="text-xs tracking-[0.1em] text-[var(--muted)] uppercase mt-1" style={{ fontFamily: 'var(--font-jetbrains)' }}>Tailwind</span>
-                </div>
-                <div className="cube-face cube-face-top">
-                  <span className="text-lg font-bold text-[#339933]" style={{ fontFamily: 'var(--font-jetbrains)' }}>{"<>"}</span>
-                  <span className="text-xs tracking-[0.1em] text-[var(--muted)] uppercase mt-1" style={{ fontFamily: 'var(--font-jetbrains)' }}>Node.js</span>
-                </div>
-                <div className="cube-face cube-face-bottom">
-                  <span className="text-lg font-bold text-[#f24e1e]" style={{ fontFamily: 'var(--font-jetbrains)' }}>F</span>
-                  <span className="text-xs tracking-[0.1em] text-[var(--muted)] uppercase mt-1" style={{ fontFamily: 'var(--font-jetbrains)' }}>Figma</span>
-                </div>
-              </div>
             </div>
-          </motion.div>
+          </div>
+
+          {/* Right Column: 3D Element */}
+          {!isMobile && (
+            <div className="hidden lg:flex items-center justify-center h-[400px] xl:h-[480px]">
+              <GoldMesh3D speed={0.3} wireframe scale={0.7} />
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Tech Stack Marquee */}
-      <div className="relative z-10 mt-8 border-t border-[rgba(99,102,241,0.08)] py-6 overflow-hidden">
+      {/* Tech Stack Marquee - hidden on mobile */}
+      <div
+        ref={marqueeRef}
+        className="relative z-10 mt-8 border-t py-6 overflow-hidden hidden sm:block"
+        style={{ borderColor: 'rgba(212, 175, 55, 0.08)', opacity: 0 }}
+      >
         <div className="marquee-track">
           {[...Array(2)].map((_, setIdx) => (
-            <div key={setIdx} className="flex gap-16 items-center">
+            <div key={setIdx} className="flex gap-12 sm:gap-16 items-center">
               {techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="text-sm tracking-[0.15em] text-[var(--muted)] whitespace-nowrap uppercase"
-                  style={{ fontFamily: 'var(--font-jetbrains)' }}
+                  className="text-xs sm:text-sm tracking-[0.15em] whitespace-nowrap uppercase"
+                  style={{ fontFamily: 'var(--font-jetbrains)', color: 'var(--muted)' }}
                 >
                   {tech}
                 </span>
@@ -183,19 +229,23 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <span className="text-xs tracking-[0.2em] text-[var(--muted)] uppercase" style={{ fontFamily: 'var(--font-jetbrains)' }}>
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <span
+          className="text-xs tracking-[0.2em] uppercase"
+          style={{ fontFamily: 'var(--font-jetbrains)', color: 'var(--muted)' }}
+        >
           Scroll
         </span>
-        <div className="w-5 h-8 rounded-full border border-[rgba(99,102,241,0.3)] flex justify-center pt-1.5">
-          <div className="w-1 h-2 rounded-full bg-[var(--accent)]" style={{ animation: 'scrollDot 1.8s ease-in-out infinite' }} />
+        <div
+          className="w-5 h-8 rounded-full flex justify-center pt-1.5"
+          style={{ border: '1px solid rgba(212, 175, 55, 0.2)' }}
+        >
+          <div
+            className="w-1 h-2 rounded-full"
+            style={{ background: 'var(--accent)', animation: 'scrollDot 1.8s ease-in-out infinite' }}
+          />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

@@ -1,65 +1,73 @@
 # M Yasir Arafath — Portfolio
 
-A dark-themed portfolio built with Next.js 16, TypeScript, and Tailwind CSS. Showcases real projects, work experience, skills, and a contact form that sends email.
+This is my personal portfolio site. I built it to showcase the work I've done over the past couple of years — the projects, the people I've worked with, and the kind of code I like to write.
 
-## Tech Stack
+I went with a dark theme and gold accents because that's what felt right. Everything is built from scratch using Next.js, TypeScript, and Tailwind CSS.
 
-- **Next.js 16** — App Router, Turbopack
-- **TypeScript**
-- **Tailwind CSS** (v4)
-- **Framer Motion** — scroll/enter animations
-- **Lenis** — smooth scrolling
-- **Nodemailer** — contact form → email
+## What's in here
 
-## Sections
+- **Hero** — my name, a quick intro, and a scrolling tech marquee
+- **About** — a bit about me, my background, and some numbers
+- **Skills** — grouped cards showing the tools I work with daily
+- **Experience** — a timeline of where I've worked and what I did
+- **Projects** — real company projects and a couple of personal ones, each with expandable details
+- **Contact** — a working form that sends me an email, plus links to LinkedIn, GitHub, and my inbox
 
-- **Hero** — gradient name with glow, code editor visual, tech marquee
-- **About** — bio, stats, orbital profile image
-- **Skills** — 6 grouped skill cards
-- **Experience** — vertical timeline with scroll-driven scale
-- **Projects** — 5 company + 2 personal project cards with expandable details
-- **Contact** — form → `/api/contact` + social links with copy buttons
-
-## Getting Started
+## Running it locally
 
 ```bash
 npm install
-```
-
-Run:
-
-```bash
 npm run dev
 ```
 
-## Build
+That's it. The site will be up at `http://localhost:3000`.
+
+## Building for production
 
 ```bash
 npm run build
 ```
 
-## Deploy
+## Deployment
 
-Designed for Vercel (or any Next.js-compatible host).
+I deployed this on Vercel. It works out of the box with any Next.js-compatible host.
 
-## Project Structure
+## A note on the contact form
+
+The form uses Nodemailer under the hood. To get it working, you'll need to set up environment variables for your email provider. I use Gmail with an app password — works fine.
+
+## Tech I used
+
+- Next.js 16 (App Router, Turbopack)
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion for animations
+- Lenis for smooth scrolling
+- GSAP for scroll-triggered effects
+- Three.js for the 3D wireframe in the hero
+- Nodemailer for the contact form
+
+## Project structure
 
 ```
 src/
 ├── app/
-│   ├── api/contact/     # Email API route
-│   ├── globals.css      # Design system, keyframes, utilities
-│   ├── layout.tsx       # Fonts, SEO metadata, JSON-LD
-│   └── page.tsx         # Section composition
+│   ├── api/contact/     # Contact form API
+│   ├── globals.css      # Styles, animations, variables
+│   ├── layout.tsx       # Fonts, metadata
+│   └── page.tsx         # Puts all sections together
 ├── components/
-│   ├── Hero.tsx         # Name, tagline, code editor, marquee
-│   ├── About.tsx        # Bio, stats, orbital portrait
-│   ├── Skills.tsx       # Skill category cards
-│   ├── Experience.tsx   # Timeline with scroll effects
-│   ├── Projects.tsx     # Project cards with detail toggle
-│   ├── Contact.tsx      # Form + social links
-│   ├── Nav.tsx          # Sticky nav with mobile menu
-│   ├── Footer.tsx       # Credits
-│   ├── BackgroundFX.tsx # Orbs, noise, grid, cursor glow
-│   └── SmoothScroll.tsx # Lenis wrapper
+│   ├── Hero.tsx
+│   ├── About.tsx
+│   ├── Skills.tsx
+│   ├── Experience.tsx
+│   ├── Projects.tsx
+│   ├── Contact.tsx
+│   ├── Nav.tsx
+│   ├── Footer.tsx
+│   └── ...supporting components
 ```
+
+---
+
+Built by M Yasir Arafath.

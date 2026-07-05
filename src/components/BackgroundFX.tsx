@@ -6,6 +6,9 @@ export default function BackgroundFX() {
   const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isTouchDevice) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       if (cursorRef.current) {
         cursorRef.current.style.left = `${e.clientX}px`;
@@ -20,32 +23,33 @@ export default function BackgroundFX() {
   return (
     <>
       <div className="noise-overlay" />
-      <div className="grid-overlay" />
-      <div ref={cursorRef} className="cursor-glow" />
 
-      {/* Floating orbs */}
+      {/* Cursor glow */}
       <div
-        className="pointer-events-none fixed z-0"
+        ref={cursorRef}
+        className="fixed pointer-events-none z-[9998] hidden md:block"
         style={{
-          width: '400px',
-          height: '400px',
+          width: '500px',
+          height: '500px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(99,102,241,0.08), transparent 70%)',
-          top: '10%',
-          left: '5%',
-          animation: 'orbFloat 20s ease-in-out infinite',
+          background: 'radial-gradient(circle, rgba(212, 175, 55, 0.03), transparent 70%)',
+          transform: 'translate(-50%, -50%)',
+          transition: 'opacity 0.3s',
+          willChange: 'left, top',
         }}
       />
+
+      {/* Subtle ambient orbs */}
       <div
         className="pointer-events-none fixed z-0"
         style={{
-          width: '300px',
-          height: '300px',
+          width: '350px',
+          height: '350px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(6,182,212,0.06), transparent 70%)',
-          bottom: '15%',
-          right: '10%',
-          animation: 'orbFloat 25s ease-in-out infinite reverse',
+          background: 'radial-gradient(circle, rgba(212, 175, 55, 0.03), transparent 70%)',
+          top: '10%',
+          left: '5%',
+          animation: 'orbFloat 25s ease-in-out infinite',
         }}
       />
       <div
@@ -54,11 +58,10 @@ export default function BackgroundFX() {
           width: '250px',
           height: '250px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(139,92,246,0.06), transparent 70%)',
-          top: '50%',
-          left: '60%',
-          animation: 'orbFloat 18s ease-in-out infinite',
-          animationDelay: '-5s',
+          background: 'radial-gradient(circle, rgba(184, 134, 11, 0.02), transparent 70%)',
+          bottom: '15%',
+          right: '10%',
+          animation: 'orbFloat 30s ease-in-out infinite reverse',
         }}
       />
     </>

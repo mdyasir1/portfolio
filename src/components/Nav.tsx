@@ -36,9 +36,13 @@ export default function Nav() {
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-[rgba(8,12,20,0.85)] shadow-lg shadow-[rgba(99,102,241,0.05)] backdrop-blur-xl border-b border-[rgba(99,102,241,0.12)]'
+            ? 'backdrop-blur-xl'
             : 'bg-transparent'
         }`}
+        style={{
+          borderBottom: isScrolled ? '1px solid rgba(212, 175, 55, 0.08)' : 'none',
+          background: isScrolled ? 'rgba(10, 10, 10, 0.85)' : 'transparent',
+        }}
       >
         <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
           <button
@@ -48,7 +52,8 @@ export default function Nav() {
             <img
               src="/yasir.png"
               alt="M Yasir Arafath"
-              className="w-10 h-10 rounded-full object-cover border border-[rgba(99,102,241,0.2)]"
+              className="w-10 h-10 rounded-full object-cover"
+              style={{ border: '1px solid rgba(212, 175, 55, 0.2)' }}
             />
           </button>
 
@@ -58,18 +63,25 @@ export default function Nav() {
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className="text-sm tracking-[0.12em] text-[var(--muted)] hover:text-[var(--text)] transition-colors duration-300 uppercase"
-                style={{ fontFamily: 'var(--font-jetbrains)' }}
+                className="text-sm tracking-[0.12em] uppercase transition-colors duration-300"
+                style={{
+                  fontFamily: 'var(--font-jetbrains)',
+                  color: 'var(--muted)',
+                }}
               >
                 {link.label}
               </button>
             ))}
             <a
               href="#contact"
-              className="px-5 py-2.5 text-sm font-semibold rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent2)] text-white hover:shadow-lg hover:shadow-[rgba(99,102,241,0.3)] transition-all duration-300"
-              style={{ fontFamily: 'var(--font-jetbrains)' }}
+              className="px-5 py-2.5 text-sm font-semibold rounded-full text-black transition-all duration-300 hover:scale-105"
+              style={{
+                fontFamily: 'var(--font-jetbrains)',
+                background: 'linear-gradient(135deg, var(--accent), var(--accent3))',
+                boxShadow: '0 0 20px rgba(212, 175, 55, 0.15)',
+              }}
             >
-              Hire Me
+              Let&apos;s Talk
             </a>
           </div>
 
@@ -81,15 +93,18 @@ export default function Nav() {
           >
             <motion.span
               animate={isMobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-              className="block w-6 h-[2px] bg-[var(--text)]"
+              className="block w-6 h-[2px]"
+              style={{ background: 'var(--text)' }}
             />
             <motion.span
               animate={isMobileOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="block w-6 h-[2px] bg-[var(--text)]"
+              className="block w-6 h-[2px]"
+              style={{ background: 'var(--text)' }}
             />
             <motion.span
               animate={isMobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-              className="block w-6 h-[2px] bg-[var(--text)]"
+              className="block w-6 h-[2px]"
+              style={{ background: 'var(--text)' }}
             />
           </button>
         </div>
@@ -102,7 +117,8 @@ export default function Nav() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-[rgba(8,12,20,0.97)] backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-8"
+            style={{ background: 'rgba(10, 10, 10, 0.97)' }}
           >
             {navLinks.map((link, i) => (
               <motion.button
@@ -111,8 +127,11 @@ export default function Nav() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 onClick={() => scrollTo(link.href)}
-                className="text-2xl tracking-[0.15em] text-[var(--muted)] hover:text-[var(--text)] transition-colors uppercase"
-                style={{ fontFamily: 'var(--font-jetbrains)' }}
+                className="text-2xl tracking-[0.15em] uppercase transition-colors"
+                style={{
+                  fontFamily: 'var(--font-jetbrains)',
+                  color: 'var(--muted)',
+                }}
               >
                 {link.label}
               </motion.button>
@@ -123,9 +142,12 @@ export default function Nav() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               onClick={() => setIsMobileOpen(false)}
-              className="px-8 py-3 text-lg font-semibold rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent2)] text-white"
+              className="px-8 py-3 text-lg font-semibold rounded-full text-black"
+              style={{
+                background: 'linear-gradient(135deg, var(--accent), var(--accent3))',
+              }}
             >
-              Hire Me
+              Let&apos;s Talk
             </motion.a>
           </motion.div>
         )}
