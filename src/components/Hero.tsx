@@ -4,7 +4,20 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import dynamic from 'next/dynamic';
 
-const GoldMesh3D = dynamic(() => import('./GoldMesh3D'), { ssr: false });
+const GoldMesh3D = dynamic(() => import('./GoldMesh3D'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center">
+      <div
+        className="w-24 h-24 rounded-full border opacity-20"
+        style={{
+          borderColor: 'var(--accent)',
+          animation: 'rotateSlow 8s linear infinite',
+        }}
+      />
+    </div>
+  ),
+});
 
 const techStack = [
   'React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS',

@@ -60,9 +60,13 @@ export default function Nav() {
           {/* Desktop */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <button
+              <a
                 key={link.href}
-                onClick={() => scrollTo(link.href)}
+                href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo(link.href);
+                }}
                 className="text-sm tracking-[0.12em] uppercase transition-colors duration-300"
                 style={{
                   fontFamily: 'var(--font-jetbrains)',
@@ -70,7 +74,7 @@ export default function Nav() {
                 }}
               >
                 {link.label}
-              </button>
+              </a>
             ))}
             <a
               href="#contact"

@@ -51,14 +51,19 @@ function GoldMesh({ speed = 0.3, wireframe = false, scale = 1 }: { speed?: numbe
 
 function Particles() {
   const pointsRef = useRef<THREE.Points>(null);
-  const count = 50;
+  const count = 25;
 
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3);
+    let seed = 42;
+    const rand = () => {
+      seed = (seed * 16807 + 0) % 2147483647;
+      return seed / 2147483647;
+    };
     for (let i = 0; i < count; i++) {
-      const r = 1.6 + Math.random() * 1;
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos(2 * Math.random() - 1);
+      const r = 1.6 + rand() * 1;
+      const theta = rand() * Math.PI * 2;
+      const phi = Math.acos(2 * rand() - 1);
       pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
       pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
       pos[i * 3 + 2] = r * Math.cos(phi);
@@ -91,9 +96,9 @@ export default function GoldMesh3D({ speed = 0.3, wireframe = false, scale = 1, 
     <div className={`w-full h-full ${className}`}>
       <Canvas
         camera={{ position: [0, 0, 4], fov: 35 }}
-        gl={{ alpha: true, antialias: true }}
+        gl={{ alpha: true, antialias: false }}
         style={{ background: 'transparent' }}
-        dpr={[1, 1.5]}
+        dpr={[1, 1.2]}
       >
         <ambientLight intensity={0.4} />
         <directionalLight position={[5, 5, 5]} intensity={0.8} color="#f5d061" />

@@ -17,10 +17,6 @@
   --font-jetbrains: 'JetBrains Mono', monospace;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   min-height: 100vh;
   margin: 0;

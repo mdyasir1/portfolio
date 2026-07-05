@@ -87,7 +87,7 @@ export default function Experience() {
     <section
       ref={sectionRef}
       id="experience"
-      className="relative overflow-hidden py-20 sm:py-24 px-6"
+      className="relative overflow-hidden py-20 sm:py-24"
       style={{ borderTop: '1px solid rgba(212, 175, 55, 0.08)' }}
     >
       <div
@@ -122,7 +122,7 @@ export default function Experience() {
           {/* Timeline line */}
           <div
             ref={timelineRef}
-            className="absolute left-[31px] top-0 bottom-0 w-[2px]"
+            className="absolute left-[7px] sm:left-[8px] top-0 bottom-0 w-[2px]"
             style={{
               background: 'linear-gradient(to bottom, var(--accent), var(--accent3), rgba(212, 175, 55, 0.1))',
               transformOrigin: 'top center',

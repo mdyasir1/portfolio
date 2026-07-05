@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 export default function ProfilePhotoVisual() {
   return (
     <div className="relative flex items-center justify-center">

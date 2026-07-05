@@ -1,6 +1,15 @@
 import nodemailer from 'nodemailer';
 import { NextRequest, NextResponse } from 'next/server';
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 export async function POST(request: NextRequest) {
   try {
     const { name, email, message } = await request.json();
@@ -16,6 +25,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Please fill all fields before sending.' }, { status: 400 });
     }
 
+    if (name.length > 100 || message.length > 2000) {
+      return NextResponse.json({ error: 'Input too long.' }, { status: 400 });
+    }
+
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safeMessage = escapeHtml(message);
+
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -29,14 +46,14 @@ export async function POST(request: NextRequest) {
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
-      subject: `New message from ${name}`,
+      subject: `New message from ${safeName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto; color: #111;">
           <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Name:</strong> ${safeName}</p>
+          <p><strong>Email:</strong> ${safeEmail}</p>
           <p><strong>Message:</strong></p>
-          <p>${message}</p>
+          <p>${safeMessage}</p>
         </div>
       `,
     };
@@ -53,7 +70,7 @@ export async function POST(request: NextRequest) {
             <h1 style="color: #0a0a0a; font-size: 24px; margin: 0; font-weight: 700;">Thank You!</h1>
           </div>
           <div style="padding: 32px 40px; color: #e2e8f0;">
-            <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px;">Hi ${name},</p>
+            <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px;">Hi ${safeName},</p>
             <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px;">Thank you for reaching out! I've received your message and will review it shortly. I typically respond within 24 hours.</p>
             <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px;">In the meantime, feel free to check out my work on <a href="https://github.com/mdyasir1" style="color: #d4af37; text-decoration: underline;">GitHub</a> or connect with me on <a href="https://www.linkedin.com/in/mdyasirarafath/" style="color: #d4af37; text-decoration: underline;">LinkedIn</a>.</p>
             <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px;">Best regards,<br/><strong style="color: #d4af37;">M Yasir Arafath</strong><br/><span style="color: #777777; font-size: 14px;">Frontend Developer</span></p>
@@ -68,8 +85,9 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail(responseMail);
 
     return NextResponse.json({ success: true });
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Unknown error';
     console.error('Email send error:', error);
-    return NextResponse.json({ error: `Failed to send email: ${error.message}` }, { status: 500 });
+    return NextResponse.json({ error: `Failed to send email: ${message}` }, { status: 500 });
   }
 }

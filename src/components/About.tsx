@@ -61,10 +61,15 @@ export default function About() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
+    const id = requestAnimationFrame(() => {
+      setIsMobile(window.innerWidth < 768);
+    });
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      cancelAnimationFrame(id);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   useEffect(() => {

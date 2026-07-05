@@ -27,13 +27,13 @@ export default function GradientMesh() {
       <div
         className="absolute"
         style={{
-          width: '600px',
-          height: '600px',
+          width: '400px',
+          height: '400px',
           top: '-10%',
           left: '-5%',
           background: 'radial-gradient(circle, rgba(212, 175, 55, 0.07) 0%, transparent 70%)',
           borderRadius: '50%',
-          filter: 'blur(80px)',
+          filter: 'blur(40px)',
           animation: 'meshDrift1 20s ease-in-out infinite',
           willChange: 'transform',
         }}
@@ -43,13 +43,13 @@ export default function GradientMesh() {
       <div
         className="absolute"
         style={{
-          width: '500px',
-          height: '500px',
+          width: '350px',
+          height: '350px',
           bottom: '-5%',
           right: '-5%',
           background: 'radial-gradient(circle, rgba(184, 134, 11, 0.05) 0%, transparent 70%)',
           borderRadius: '50%',
-          filter: 'blur(80px)',
+          filter: 'blur(40px)',
           animation: 'meshDrift2 25s ease-in-out infinite',
           willChange: 'transform',
         }}
@@ -59,13 +59,13 @@ export default function GradientMesh() {
       <div
         className="absolute"
         style={{
-          width: '450px',
-          height: '450px',
+          width: '300px',
+          height: '300px',
           top: '40%',
           right: '20%',
           background: 'radial-gradient(circle, rgba(245, 208, 97, 0.04) 0%, transparent 70%)',
           borderRadius: '50%',
-          filter: 'blur(80px)',
+          filter: 'blur(40px)',
           animation: 'meshDrift3 30s ease-in-out infinite',
           willChange: 'transform',
         }}
