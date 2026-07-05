@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
             <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px;">Hi ${safeName},</p>
             <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px;">Thank you for reaching out! I've received your message and will review it shortly. I typically respond within 24 hours.</p>
             <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px;">In the meantime, feel free to check out my work on <a href="https://github.com/mdyasir1" style="color: #d4af37; text-decoration: underline;">GitHub</a> or connect with me on <a href="https://www.linkedin.com/in/mdyasirarafath/" style="color: #d4af37; text-decoration: underline;">LinkedIn</a>.</p>
-            <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px;">Best regards,<br/><strong style="color: #d4af37;">M Yasir Arafath</strong><br/><span style="color: #777777; font-size: 14px;">Frontend Developer</span></p>
+            <p style="font-size: 16px; line-height: 1.6; margin: 0 0 16px;">Best regards,<br/><strong style="color: #d4af37;">M Yasir Arafath</strong><br/><span style="color: #777777; font-size: 14px;">Software Developer</span></p>
           </div>
           <div style="background: #111111; padding: 16px 40px; text-align: center; border-top: 1px solid rgba(212,175,55,0.1);">
             <p style="color: #777777; font-size: 12px; margin: 0;">Hyderabad, India</p>

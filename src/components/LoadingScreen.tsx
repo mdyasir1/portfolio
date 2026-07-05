@@ -117,7 +117,7 @@ export default function LoadingScreen() {
         className="text-xs tracking-[0.2em] uppercase"
         style={{ fontFamily: 'var(--font-jetbrains)', color: 'var(--muted)', opacity: 0 }}
       >
-        Frontend Developer &amp; UI Engineer
+        Software Developer &amp; UI Engineer
       </div>
     </div>
   );

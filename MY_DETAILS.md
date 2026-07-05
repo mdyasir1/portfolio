@@ -3,7 +3,7 @@
 ## Personal Information
 
 - **Full Name:** M Yasir Arafath (Mohammad Yasir Arafath)
-- **Role:** Frontend Developer / UI Engineer
+- **Role:** Software Developer / UI Engineer
 - **Location:** Hyderabad, India
 - **Email:** mdyasir4145@gmail.com
 - **Website:** https://mdyasir.me
@@ -36,7 +36,7 @@ React.js, Next.js, TypeScript, JavaScript, Tailwind CSS, Node.js, Express.js, Mo
 ## About Section
 
 ### Bio
-M Yasir Arafath is a Frontend Developer based in Hyderabad, India. He studied Electrical & Electronics Engineering at RGUKT Nuzvid (2024). His passion for development started when he inspected his first webpage and realized he could make something appear on screen just by typing.
+M Yasir Arafath is a Software Developer based in Hyderabad, India. He studied Electrical & Electronics Engineering at RGUKT Nuzvid (2024). His passion for development started when he inspected his first webpage and realized he could make something appear on screen just by typing.
 
 ### Career Journey
 1. **Trangla Innovations** — Junior Frontend Developer, where he worked across multiple projects including dashboards, e-commerce platforms, and landing pages, honing skills in React, TypeScript, and modern CSS.
@@ -62,13 +62,13 @@ M Yasir Arafath is a Frontend Developer based in Hyderabad, India. He studied El
 
 ## Work Experience
 
-### 1. Frontend Developer — SmartEdge Solutions
+### 1. Software Developer — SmartEdge Solutions
 - **Period:** Dec 2025 – Present
 - **Location:** Hyderabad (WFH)
 - **Description:** Led the frontend development of Areeva AI, a recruitment platform that uses AI to interview and screen candidates. Built the dashboard UIs, the interview interface, and wired everything to the backend APIs. The system automates job postings, applications, screening, and onboarding while keeping human senior officials in the loop.
 - **Technologies:** React.js, Next.js, Tailwind CSS, TypeScript, API Integration, Dashboard UI
 
-### 2. Junior Frontend Developer — Trangla Innovations
+### 2. Junior Software Developer — Trangla Innovations
 - **Period:** Oct 2023 – Nov 2025
 - **Location:** Hyderabad
 - **Description:** Worked on a mix of projects — dashboards, e-commerce sites, and landing pages. Wrote a lot of React, wired up REST APIs, managed state with Redux, and learned how to ship features on a team timeline.
@@ -182,7 +182,6 @@ M Yasir Arafath is a Frontend Developer based in Hyderabad, India. He studied El
 | GSAP | ^3.15.0 |
 | Three.js | ^0.184.0 |
 | React Three Fiber | ^9.6.0 |
-| React Three Drei | ^10.7.7 |
 | Lenis | ^1.3.23 |
 | Nodemailer | ^8.0.6 |
 
@@ -227,4 +226,4 @@ src/
 
 ## Summary
 
-M Yasir Arafath is a Frontend Developer with 2+ years of experience, currently working at SmartEdge Solutions leading the frontend development of Areeva AI. He has delivered 10+ projects across 2 companies, specializing in React, Next.js, TypeScript, and modern UI engineering. He is based in Hyderabad, India, and is available for new opportunities.
+M Yasir Arafath is a Software Developer with 2+ years of experience, currently working at SmartEdge Solutions leading the frontend development of Areeva AI. He has delivered 10+ projects across 2 companies, specializing in React, Next.js, TypeScript, and modern UI engineering. He is based in Hyderabad, India, and is available for new opportunities.

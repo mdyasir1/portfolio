@@ -115,7 +115,7 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: 'var(--accent)' }} />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5" style={{ background: 'var(--accent)' }} />
               </span>
-              Frontend Developer
+              Software Developer
             </div>
 
             <div className="space-y-3">

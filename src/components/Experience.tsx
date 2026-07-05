@@ -12,7 +12,7 @@ const experiences = [
     period: 'Dec 2025 \u2013 Present',
     company: 'SmartEdge Solutions',
     location: 'Hyderabad (WFH)',
-    role: 'Frontend Developer',
+    role: 'Software Developer',
     description:
       'At SmartEdge, I work on Areeva AI \u2014 a recruitment platform that uses AI to interview and screen candidates. My focus is on the frontend: building dashboard UIs, the interview interface, and connecting everything to the backend APIs. The system handles job postings, applications, screening, and onboarding, with human oversight at every stage.',
     tags: ['React.js', 'Next.js', 'Tailwind CSS', 'TypeScript', 'API Integration', 'Dashboard UI'],
@@ -21,7 +21,7 @@ const experiences = [
     period: 'Oct 2023 \u2013 Nov 2025',
     company: 'Trangla Innovations',
     location: 'Hyderabad',
-    role: 'Junior Frontend Developer',
+    role: 'Junior Software Developer',
     description:
       'At Trangla, I worked across a range of products \u2014 dashboards, e-commerce sites, and landing pages. I spent a lot of time with React, wired up REST APIs, managed state with Redux, and learned what it takes to ship features on a real team timeline.',
     tags: ['React.js', 'JavaScript', 'CSS/SCSS', 'REST APIs', 'Redux', 'Git'],
