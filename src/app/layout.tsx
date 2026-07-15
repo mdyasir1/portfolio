@@ -129,12 +129,69 @@ export default function RootLayout({
                 name: "M Yasir Arafath",
                 alternateName: ["Mohammad Yasir Arafath", "Yasir Arafath"],
                 url: "https://mdyasir.me",
-                image: {
-                  "@type": "ImageObject",
-                  url: "https://mdyasir.me/yasir.png",
-                  caption: "M Yasir Arafath - Software Developer",
-                  description: "Photo of M Yasir Arafath, a Software Developer from Hyderabad, India",
-                },
+                image: [
+                  {
+                    "@type": "ImageObject",
+                    url: "https://mdyasir.me/yasir.png",
+                    caption: "M Yasir Arafath - Software Developer",
+                    description: "Photo of M Yasir Arafath, a Software Developer from Hyderabad, India",
+                  },
+                  {
+                    "@type": "ImageObject",
+                    url: "https://mdyasir.me/y/mohammed-yasir-arafath-software-developer.png",
+                    caption: "Mohammed Yasir Arafath Software Developer",
+                  },
+                  {
+                    "@type": "ImageObject",
+                    url: "https://mdyasir.me/y/yasir-arafath-vijayawada-developer-1.jpg",
+                    caption: "Yasir Arafath Vijayawada Developer",
+                  },
+                  {
+                    "@type": "ImageObject",
+                    url: "https://mdyasir.me/y/mohammed-yasir-arafath-hyderabad-1.jpg",
+                    caption: "Mohammed Yasir Arafath Hyderabad",
+                  },
+                  {
+                    "@type": "ImageObject",
+                    url: "https://mdyasir.me/y/yasir-arafath-software-engineer-1.jpg",
+                    caption: "Yasir Arafath Software Engineer",
+                  },
+                  {
+                    "@type": "ImageObject",
+                    url: "https://mdyasir.me/y/mohammed-yasir-arafath-vijayawada-1.jpg",
+                    caption: "Mohammed Yasir Arafath Vijayawada",
+                  },
+                  {
+                    "@type": "ImageObject",
+                    url: "https://mdyasir.me/y/yasir-m-software-developer-1.jpg",
+                    caption: "Yasir M Software Developer",
+                  },
+                  {
+                    "@type": "ImageObject",
+                    url: "https://mdyasir.me/y/mohammed-yasir-arafath-frontend-developer.jpg",
+                    caption: "Mohammed Yasir Arafath Frontend Developer",
+                  },
+                  {
+                    "@type": "ImageObject",
+                    url: "https://mdyasir.me/y/yasir-arafath-md-developer-1.jpg",
+                    caption: "Yasir Arafath MD Developer",
+                  },
+                  {
+                    "@type": "ImageObject",
+                    url: "https://mdyasir.me/y/mohammed-yasir-arafath-react-developer.jpg",
+                    caption: "Mohammed Yasir Arafath React Developer",
+                  },
+                  {
+                    "@type": "ImageObject",
+                    url: "https://mdyasir.me/y/yasir-arafath-hyderabad-software-engineer.jpg",
+                    caption: "Yasir Arafath Hyderabad Software Engineer",
+                  },
+                  {
+                    "@type": "ImageObject",
+                    url: "https://mdyasir.me/y/mohammed-yasir-arafath-profile.jpg",
+                    caption: "Mohammed Yasir Arafath Profile Photo",
+                  },
+                ],
                 sameAs: [
                   "https://www.linkedin.com/in/mdyasirarafath/",
                   "https://github.com/mdyasir1",

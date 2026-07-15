@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://mdyasir.me/gallery</loc>
+    <image:image>
+      <image:loc>https://mdyasir.me/y/mohammed-yasir-arafath-software-developer.png</image:loc>
+      <image:title>Mohammed Yasir Arafath Software Developer</image:title>
+      <image:caption>Mohammed Yasir Arafath — Software Developer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mdyasir.me/y/yasir-arafath-vijayawada-developer-1.jpg</image:loc>
+      <image:title>Yasir Arafath Vijayawada Developer</image:title>
+      <image:caption>Yasir Arafath — Vijayawada, Developer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mdyasir.me/y/mohammed-yasir-arafath-hyderabad-1.jpg</image:loc>
+      <image:title>Mohammed Yasir Arafath Hyderabad Software Developer</image:title>
+      <image:caption>Mohammed Yasir Arafath — Hyderabad</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mdyasir.me/y/yasir-arafath-software-engineer-1.jpg</image:loc>
+      <image:title>Yasir Arafath Software Engineer</image:title>
+      <image:caption>Yasir Arafath — Software Engineer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mdyasir.me/y/mohammed-yasir-arafath-vijayawada-1.jpg</image:loc>
+      <image:title>Mohammed Yasir Arafath Vijayawada</image:title>
+      <image:caption>Mohammed Yasir Arafath — Vijayawada</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mdyasir.me/y/yasir-m-software-developer-1.jpg</image:loc>
+      <image:title>Yasir M Software Developer</image:title>
+      <image:caption>Yasir M — Software Developer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mdyasir.me/y/mohammed-yasir-arafath-frontend-developer.jpg</image:loc>
+      <image:title>Mohammed Yasir Arafath Frontend Developer</image:title>
+      <image:caption>Mohammed Yasir Arafath — Frontend Developer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mdyasir.me/y/yasir-arafath-md-developer-1.jpg</image:loc>
+      <image:title>Yasir Arafath MD Developer</image:title>
+      <image:caption>Yasir Arafath — MD Developer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mdyasir.me/y/mohammed-yasir-arafath-react-developer.jpg</image:loc>
+      <image:title>Mohammed Yasir Arafath React Developer</image:title>
+      <image:caption>Mohammed Yasir Arafath — React Developer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mdyasir.me/y/yasir-arafath-hyderabad-software-engineer.jpg</image:loc>
+      <image:title>Yasir Arafath Hyderabad Software Engineer</image:title>
+      <image:caption>Yasir Arafath — Hyderabad Software Engineer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mdyasir.me/y/mohammed-yasir-arafath-profile.jpg</image:loc>
+      <image:title>Mohammed Yasir Arafath Profile Photo</image:title>
+      <image:caption>Mohammed Yasir Arafath — Profile</image:caption>
+    </image:image>
+  </url>
+</urlset>
