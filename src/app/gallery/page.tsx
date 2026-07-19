@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "M Yasir Arafath - Software Developer | Photo Gallery",
@@ -113,12 +112,13 @@ export default function GalleryPage() {
           {photos.map((photo) => (
             <figure key={photo.src} className="group">
               <div className="relative aspect-square overflow-hidden rounded-xl border border-white/10">
-                <Image
+                <img
                   src={photo.src}
                   alt={photo.alt}
-                  fill
-                  sizes="(max-width: 640px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  width={400}
+                  height={400}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <figcaption className="mt-2 text-xs text-gray-500 text-center">

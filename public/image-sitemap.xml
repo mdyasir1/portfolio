@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://mdyasir.me/gallery</loc>
+    <loc>https://mdyasir.me</loc>
     <image:image>
       <image:loc>https://mdyasir.me/y/mohammed-yasir-arafath-software-developer.png</image:loc>
       <image:title>Mohammed Yasir Arafath Software Developer</image:title>
