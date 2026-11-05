@@ -139,7 +139,7 @@ export default function About() {
                 based in Hyderabad, India. I studied{' '}
                 <span style={{ color: 'var(--accent)' }}>Electrical &amp; Electronics Engineering</span>{' '}
                 at RGUKT Nuzvid (2024). I still remember inspecting my first webpage and
-                realising I could make something appear on screen just by typing — that
+                realising I could make something appear on screen just by typing. That
                 curiosity pulled me into development, and I haven&apos;t stopped since.
               </p>
               <p>
@@ -152,7 +152,7 @@ export default function About() {
               <p>
                 Today, I&apos;m at{' '}
                 <span style={{ color: 'var(--text)' }}>Valueleaf Pvt Ltd</span>, working on{' '}
-                <span style={{ color: 'var(--accent)' }}>Areeva AI</span> — a recruitment
+                <span style={{ color: 'var(--accent)' }}>Areeva AI</span>, a recruitment
                 platform that uses AI to streamline interviews and candidate screening.
                 I build the dashboard interfaces, integrate with backend APIs, and
                 try to make the whole experience feel seamless.

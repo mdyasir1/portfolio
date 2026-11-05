@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
     const responseMail = {
       from: process.env.EMAIL_USER,
       to: email,
-      subject: 'Thank you for reaching out — M Yasir Arafath',
+      subject: 'Thank you for reaching out: M Yasir Arafath',
       html: `
         <div style="font-family: 'Inter', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0a0a0a; border-radius: 16px; overflow: hidden; border: 1px solid rgba(212,175,55,0.15);">
           <div style="background: linear-gradient(135deg, #d4af37, #b8860b); padding: 32px 40px; text-align: center;">

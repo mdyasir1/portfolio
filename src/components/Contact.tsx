@@ -107,7 +107,7 @@ export default function Contact() {
             </span>
           </h2>
           <p className="text-sm sm:text-base leading-relaxed max-w-xl mx-auto px-2" style={{ color: 'var(--muted)' }}>
-            Whether it&apos;s a project, a collaboration, or just a quick question — drop me a line. I typically respond within a day.
+            Whether it&apos;s a project, a collaboration, or just a quick question, drop me a line. I typically respond within a day.
           </p>
         </motion.div>
 

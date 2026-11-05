@@ -18,37 +18,37 @@ const companyProjects: Project[] = [
   {
     title: 'Areeva AI',
     description:
-      'A recruitment platform built at Valueleaf Pvt Ltd. It streamlines the hiring pipeline \u2014 job postings, candidate screening, AI interviews, and onboarding \u2014 while keeping human oversight in the loop. My work focused on the frontend: dashboards, interview interfaces, and API integration.',
+      'A recruitment platform built at Valueleaf Pvt Ltd. It streamlines the hiring pipeline: job postings, candidate screening, AI interviews, and onboarding, while keeping human oversight in the loop. My work focused on the frontend: dashboards, interview interfaces, and API integration.',
     image: '/areeva.jpg',
     tags: ['React.js', 'Next.js', 'Tailwind CSS', 'TypeScript', 'API Integration', 'Dashboard UI'],
     private: true,
     type: 'company',
   },
   {
-    title: 'Multi-Modal Travel Booking System \u2013 Hotel Booking',
+    title: 'Multi Modal Travel Booking System: Hotel Booking',
     description:
-      'A hotel search results page for a multi-modal travel platform covering trains, flights, buses, and hotels. The challenge was handling complex filter combinations \u2014 price, ratings, availability \u2014 without slowing the page down. I used React Query for API management and ensured every layout held up on mobile.',
+      'A hotel search results page for a multi-modal travel platform covering trains, flights, buses, and hotels. The challenge was handling complex filter combinations: price, ratings, availability, without slowing the page down. I used React Query for API management and ensured every layout held up on mobile.',
     image: '/project-1.jpeg',
     type: 'company',
   },
   {
-    title: 'Truck Management System \u2013 Fleet Operations Platform',
+    title: 'Truck Management System: Fleet Operations Platform',
     description:
       'A fleet operations dashboard for SwiftLogistics. I built a mobile-first interface so drivers and dispatchers could track trucks in real time. The main challenge was making the map and tracking data feel instant, even on slower connections.',
     image: '/project-2.jpg',
     type: 'company',
   },
   {
-    title: 'Brobrooke \u2013 Social Fitness Platform',
+    title: 'Brobrooke: Social Fitness Platform',
     description:
       'A social fitness app where people log workouts and encourage each other. I built the workout tracker, community feed, and auth flow. The interesting part was designing an activity feed that felt engaging without being overwhelming.',
     image: '/fitness.jpg',
     type: 'company',
   },
   {
-    title: 'TheWayFinder \u2013 Consultancy Web Application',
+    title: 'TheWayFinder: Consultancy Web Application',
     description:
-      'A consultancy website built with Next.js \u2014 mostly a brochure with a contact form. I focused on SEO since that was their primary lead channel, and set up dynamic routes so they could add new service pages without touching code.',
+      'A consultancy website built with Next.js, mostly a brochure with a contact form. I focused on SEO since that was their primary lead channel, and set up dynamic routes so they could add new service pages without touching code.',
     image: '/wayfinder.jpg',
     type: 'company',
   },
@@ -58,7 +58,7 @@ const personalProjects: Project[] = [
   {
     title: 'TrackKit',
     description:
-      'A lightweight inventory tool for small shop owners who were still relying on spreadsheets. It lets users add products, record sales, and monitor stock levels from a simple dashboard. Built with Prisma and NextAuth, the idea was to make it as straightforward as a notebook \u2014 but more useful.',
+      'A lightweight inventory tool for small shop owners who were still relying on spreadsheets. It lets users add products, record sales, and monitor stock levels from a simple dashboard. Built with Prisma and NextAuth, the idea was to make it as straightforward as a notebook but more useful.',
     image: '/trackkit.jpg',
     readme: 'https://github.com/mdyasir1/TrackkIt',
     type: 'personal',

@@ -23,7 +23,7 @@ export default function GradientMesh() {
 
   return (
     <div ref={containerRef} className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-      {/* Blob 1 — Large gold, top-left */}
+      {/* Blob 1: Large gold, top-left */}
       <div
         className="absolute"
         style={{
@@ -39,7 +39,7 @@ export default function GradientMesh() {
         }}
       />
 
-      {/* Blob 2 — Warm amber, bottom-right */}
+      {/* Blob 2: Warm amber, bottom-right */}
       <div
         className="absolute"
         style={{
@@ -55,7 +55,7 @@ export default function GradientMesh() {
         }}
       />
 
-      {/* Blob 3 — Faint light gold, center-right */}
+      {/* Blob 3: Faint light gold, center-right */}
       <div
         className="absolute"
         style={{

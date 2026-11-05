@@ -26,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mdyasir.me"),
-  title: "M Yasir Arafath | Software Developer – React, Next.js, TypeScript",
+  title: "M Yasir Arafath | Software Developer • React, Next.js, TypeScript",
   description:
     "M Yasir Arafath is a Software Developer with 2+ years of experience building modern web applications using React, Next.js, TypeScript, and Tailwind CSS. Currently at Valueleaf Pvt Ltd building Areeva AI. Available for hire.",
   keywords: [
@@ -259,7 +259,7 @@ export default function RootLayout({
                     name: "Who is M Yasir Arafath?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "M Yasir Arafath is a Software Developer from Hyderabad, India with 2+ years of experience. He currently works at Valueleaf Pvt Ltd building Areeva AI — an AI-powered recruitment platform.",
+                      text: "M Yasir Arafath is a Software Developer from Hyderabad, India with 2+ years of experience. He currently works at Valueleaf Pvt Ltd building Areeva AI, an AI-powered recruitment platform.",
                     },
                   },
                   {
@@ -275,7 +275,7 @@ export default function RootLayout({
                     name: "Where does M Yasir currently work?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "He works at Valueleaf Pvt Ltd in Hyderabad, building Areeva AI — a recruitment platform that uses AI to interview and screen candidates.",
+                      text: "He works at Valueleaf Pvt Ltd in Hyderabad, building Areeva AI, a recruitment platform that uses AI to interview and screen candidates.",
                     },
                   },
                   {

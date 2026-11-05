@@ -157,7 +157,7 @@ export default function Hero() {
                   2+ years of hands-on experience building for the web.</span>
                 <span className="hidden sm:inline">Software developer at{' '}
                   <span style={{ color: 'var(--accent)' }}>Valueleaf Pvt Ltd</span>,
-                  where I work on <span style={{ color: 'var(--accent)' }}>Areeva AI</span> —
+                  where I work on <span style={{ color: 'var(--accent)' }}>Areeva AI</span>,
                   an AI-powered recruitment platform. Over the past two years, I&apos;ve
                   shipped dashboards, e-commerce storefronts, and SaaS products across
                   multiple startups, focusing on clean code and thoughtful interfaces.</span>
