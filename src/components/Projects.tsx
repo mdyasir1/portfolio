@@ -18,7 +18,7 @@ const companyProjects: Project[] = [
   {
     title: 'Areeva AI',
     description:
-      'A recruitment platform built at SmartEdge Solutions. It streamlines the hiring pipeline \u2014 job postings, candidate screening, AI interviews, and onboarding \u2014 while keeping human oversight in the loop. My work focused on the frontend: dashboards, interview interfaces, and API integration.',
+      'A recruitment platform built at Valueleaf Pvt Ltd. It streamlines the hiring pipeline \u2014 job postings, candidate screening, AI interviews, and onboarding \u2014 while keeping human oversight in the loop. My work focused on the frontend: dashboards, interview interfaces, and API integration.',
     image: '/areeva.jpg',
     tags: ['React.js', 'Next.js', 'Tailwind CSS', 'TypeScript', 'API Integration', 'Dashboard UI'],
     private: true,

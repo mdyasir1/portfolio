@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mdyasir.me"),
   title: "M Yasir Arafath | Software Developer – React, Next.js, TypeScript",
   description:
-    "M Yasir Arafath is a Software Developer with 2+ years of experience building modern web applications using React, Next.js, TypeScript, and Tailwind CSS. Currently at SmartEdge Solutions building Areeva AI. Available for hire.",
+    "M Yasir Arafath is a Software Developer with 2+ years of experience building modern web applications using React, Next.js, TypeScript, and Tailwind CSS. Currently at Valueleaf Pvt Ltd building Areeva AI. Available for hire.",
   keywords: [
     "M Yasir Arafath",
     "Yasir",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     "freelancer India",
     "developer portfolio",
     "Areeva AI developer",
-    "SmartEdge Solutions developer",
+    "Valueleaf Pvt Ltd developer",
     "web application developer",
     "responsive web design",
     "modern web development",
@@ -199,7 +199,7 @@ export default function RootLayout({
                 jobTitle: "Software Developer",
                 worksFor: {
                   "@type": "Organization",
-                  name: "SmartEdge Solutions",
+                  name: "Valueleaf Pvt Ltd",
                 },
                 address: {
                   "@type": "PostalAddress",
@@ -259,7 +259,7 @@ export default function RootLayout({
                     name: "Who is M Yasir Arafath?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "M Yasir Arafath is a Software Developer from Hyderabad, India with 2+ years of experience. He currently works at SmartEdge Solutions building Areeva AI — an AI-powered recruitment platform.",
+                      text: "M Yasir Arafath is a Software Developer from Hyderabad, India with 2+ years of experience. He currently works at Valueleaf Pvt Ltd building Areeva AI — an AI-powered recruitment platform.",
                     },
                   },
                   {
@@ -275,7 +275,7 @@ export default function RootLayout({
                     name: "Where does M Yasir currently work?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "He works at SmartEdge Solutions in Hyderabad, building Areeva AI — a recruitment platform that uses AI to interview and screen candidates.",
+                      text: "He works at Valueleaf Pvt Ltd in Hyderabad, building Areeva AI — a recruitment platform that uses AI to interview and screen candidates.",
                     },
                   },
                   {

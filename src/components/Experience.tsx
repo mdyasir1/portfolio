@@ -10,11 +10,11 @@ gsap.registerPlugin(ScrollTrigger);
 const experiences = [
   {
     period: 'Dec 2025 \u2013 Present',
-    company: 'SmartEdge Solutions',
+    company: 'Valueleaf Pvt Ltd',
     location: 'Hyderabad (WFH)',
     role: 'Software Developer',
     description:
-      'At SmartEdge, I work on Areeva AI \u2014 a recruitment platform that uses AI to interview and screen candidates. My focus is on the frontend: building dashboard UIs, the interview interface, and connecting everything to the backend APIs. The system handles job postings, applications, screening, and onboarding, with human oversight at every stage.',
+      'At Valueleaf, I work on Areeva AI \u2014 a recruitment platform that uses AI to interview and screen candidates. My focus is on the frontend: building dashboard UIs, the interview interface, and connecting everything to the backend APIs. The system handles job postings, applications, screening, and onboarding, with human oversight at every stage.',
     tags: ['React.js', 'Next.js', 'Tailwind CSS', 'TypeScript', 'API Integration', 'Dashboard UI'],
   },
   {

@@ -152,11 +152,11 @@ export default function Hero() {
                 style={{ color: 'var(--muted)' }}
               >
                 <span className="sm:hidden">Software developer at{' '}
-                  <span style={{ color: 'var(--accent)' }}>SmartEdge Solutions</span>,
+                  <span style={{ color: 'var(--accent)' }}>Valueleaf Pvt Ltd</span>,
                   working on <span style={{ color: 'var(--accent)' }}>Areeva AI</span>.
                   2+ years of hands-on experience building for the web.</span>
                 <span className="hidden sm:inline">Software developer at{' '}
-                  <span style={{ color: 'var(--accent)' }}>SmartEdge Solutions</span>,
+                  <span style={{ color: 'var(--accent)' }}>Valueleaf Pvt Ltd</span>,
                   where I work on <span style={{ color: 'var(--accent)' }}>Areeva AI</span> —
                   an AI-powered recruitment platform. Over the past two years, I&apos;ve
                   shipped dashboards, e-commerce storefronts, and SaaS products across

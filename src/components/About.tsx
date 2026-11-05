@@ -151,7 +151,7 @@ export default function About() {
               </p>
               <p>
                 Today, I&apos;m at{' '}
-                <span style={{ color: 'var(--text)' }}>SmartEdge Solutions</span>, working on{' '}
+                <span style={{ color: 'var(--text)' }}>Valueleaf Pvt Ltd</span>, working on{' '}
                 <span style={{ color: 'var(--accent)' }}>Areeva AI</span> — a recruitment
                 platform that uses AI to streamline interviews and candidate screening.
                 I build the dashboard interfaces, integrate with backend APIs, and
